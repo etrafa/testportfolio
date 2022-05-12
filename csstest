@@ -1,0 +1,64 @@
+/*FONT*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  height: 100vh;
+}
+
+/* HOME SECTION STARTS HERE */
+.home {
+  position: relative;
+  width: 100%;
+  background: url(assets/background.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  filter: brightness(1.2);
+  filter: saturate(2);
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header h1 {
+  color: #e96f92;
+  margin-top: 5rem;
+  font-size: 560%;
+  font-weight: bold;
+}
+
+.home span {
+  color: #241302;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 0.4rem;
+}
+
+/* NAVBAR STARTS HERE */
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+nav > ul > li {
+  font-weight: 900;
+  margin-top: 2rem;
+  /* color: #370b37; */
+  color: #241302;
+  cursor: pointer;
+}
+/* NAVBAR ENDS HERE */
+
+/* HOME SECTION ENDS HERE */

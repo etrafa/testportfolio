@@ -1,0 +1,95 @@
+/* BACKGROUND DARK ANIMATION */
+
+@keyframes darkBackground {
+  5% {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  8% {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  10% {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  12% {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  14% {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  16% {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  18% {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  20% {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  22% {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  100% {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+      url(assets/background.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
+
+/*NAME ANIMATION*/
+
+@keyframes textToWhiteAnimation {
+  5% {
+    color: #ece6e6;
+  }
+  8% {
+    color: #e4e4e4;
+  }
+  10% {
+  }
+  12% {
+    color: #dbdbdb;
+  }
+  14% {
+  }
+  16% {
+    color: #fff;
+  }
+  18% {
+  }
+  20% {
+  }
+  22% {
+    color: #fff;
+  }
+  100% {
+    color: #fff;
+  }
+}
