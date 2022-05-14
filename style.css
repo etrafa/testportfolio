@@ -27,10 +27,6 @@ main {
   animation-duration: 2s;
 }
 
-.main-active {
-  animation: darkBackground 4s forwards;
-}
-
 nav ul {
   display: flex;
   flex-direction: row;
@@ -101,14 +97,18 @@ header {
   padding: 0 40px;
   /* animation: textToWhiteAnimation 4s forwards; */
 }
+.main-active {
+  animation: darkBackground 4s forwards;
+}
 
 .developer-name-animation {
   animation: fadeOut;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
+
 .title-animation {
   animation: fadeOut;
-  animation-duration: 3s;
+  animation-duration: 4s;
 }
 
 .home-deactive {
@@ -124,6 +124,7 @@ header {
   color: #fff;
   animation: fadeIn;
   animation-duration: 5s;
+  padding-bottom: 20px;
 }
 
 .about-deactive {
@@ -131,11 +132,11 @@ header {
   animation-duration: 3s;
 }
 
-.skills {
+/* .skills {
   display: none;
-}
+} */
 
-/* .skills-active {
+.skills-active {
   display: block;
   position: absolute;
   top: 8%;
@@ -147,7 +148,7 @@ header {
 .skills-deactive {
   animation: fadeOut;
   animation-duration: 3s;
-} */
+}
 
 .projects {
   display: none;
@@ -172,6 +173,7 @@ header {
 
 .skills {
   color: #fff;
+  width: 100%;
 }
 
 .contact-active {
@@ -199,6 +201,10 @@ main img {
   z-index: -1;
   animation: ballonAnimation 40s linear infinite;
   animation-fill-mode: forwards;
+}
+
+.balloon-dark {
+  opacity: 0.1;
 }
 
 .balloon2 {
@@ -367,4 +373,9 @@ a:visited {
   .about p {
     padding: 40px 340px;
   }
+}
+
+.work {
+  width: 95%;
+  height: 233px;
 }

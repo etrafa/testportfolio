@@ -18,44 +18,46 @@ const navContact = document.querySelector(".nav-contact");
 //ELEMENTS
 const developerName = document.querySelector(".developer-name");
 const title = document.querySelector(".title");
+const balloonOne = document.querySelector(".balloon1");
+const balloonTwo = document.querySelector(".balloon2");
 
-let keyCounter = 1;
+// let keyCounter = 1;
 
-document.addEventListener("keyup", (e) => {
-  console.log(e.key);
-  if (e.key === "ArrowDown" && keyCounter === 1) {
-    developerName.classList.add("developer-name-animation");
-    title.classList.add("title-animation");
-    aboutSection.classList.add("about-active");
-    keyCounter = keyCounter + 1;
-    setTimeout(() => {
-      developerName.style.display = "none";
-      title.style.display = "none";
-    }, 3000);
-  } else if (e.key === "ArrowDown" && keyCounter === 2) {
-    aboutSection.classList.add("about-deactive");
-    skillSection.classList.add("skills-active");
-    keyCounter = keyCounter + 1;
-    setTimeout(() => {
-      aboutSection.style.display = "none";
-    }, 3000);
-  } else if (e.key === "ArrowDown" && keyCounter === 3) {
-    skillSection.classList.add("skills-deactive");
-    projectsSection.classList.add("projects-active");
-    keyCounter = keyCounter + 1;
-    setTimeout(() => {
-      skillSection.style.display = "none";
-    }, 3000);
-  } else if (e.key === "ArrowDown" && keyCounter === 4) {
-    projectsSection.classList.add("projects-deactive");
-    contactSection.classList.add("contact-active");
-    setTimeout(() => {
-      projectsSection.style.display = "none";
-    }, 3000);
-  } else if (keyCounter > 4) {
-    return keyCounter === 4;
-  }
-});
+// document.addEventListener("keyup", (e) => {
+//   console.log(e.key);
+//   if (e.key === "ArrowDown" && keyCounter === 1) {
+//     developerName.classList.add("developer-name-animation");
+//     title.classList.add("title-animation");
+//     aboutSection.classList.add("about-active");
+//     keyCounter = keyCounter + 1;
+//     setTimeout(() => {
+//       developerName.style.display = "none";
+//       title.style.display = "none";
+//     }, 3000);
+//   } else if (e.key === "ArrowDown" && keyCounter === 2) {
+//     aboutSection.classList.add("about-deactive");
+//     skillSection.classList.add("skills-active");
+//     keyCounter = keyCounter + 1;
+//     setTimeout(() => {
+//       aboutSection.style.display = "none";
+//     }, 3000);
+//   } else if (e.key === "ArrowDown" && keyCounter === 3) {
+//     skillSection.classList.add("skills-deactive");
+//     projectsSection.classList.add("projects-active");
+//     keyCounter = keyCounter + 1;
+//     setTimeout(() => {
+//       skillSection.style.display = "none";
+//     }, 3000);
+//   } else if (e.key === "ArrowDown" && keyCounter === 4) {
+//     projectsSection.classList.add("projects-deactive");
+//     contactSection.classList.add("contact-active");
+//     setTimeout(() => {
+//       projectsSection.style.display = "none";
+//     }, 3000);
+//   } else if (keyCounter > 4) {
+//     return keyCounter === 4;
+//   }
+// });
 
 //HIDE SECTIONS ONCLICK
 const hideElements = (el1, el2, el3, el4, el5) => {
@@ -114,6 +116,7 @@ nextPage.addEventListener("click", () => {
   if (page >= 5) {
     page = 0;
   }
+  console.log(page);
   if (page === 0) {
     hideElements(
       homeSection,
@@ -123,37 +126,64 @@ nextPage.addEventListener("click", () => {
       contactSection
     );
   } else if (page === 1) {
-    hideElements(
-      aboutSection,
-      homeSection,
-      skillSection,
-      projectsSection,
-      contactSection
-    );
+    mainWrapper.classList.add("main-active");
+    developerName.classList.add("developer-name-animation");
+    title.classList.add("title-animation");
+    balloonOne.classList.add("balloon-dark");
+    balloonTwo.classList.add("balloon-dark");
+    navAbout.style.color = "#fff";
+    navSkills.style.color = "#fff";
+    navProjects.style.color = "#fff";
+    navContact.style.color = "#fff";
+    nextPage.style.color = "#fff";
+    prevPage.style.color = "#fff";
+
+    setTimeout(() => {
+      hideElements(
+        aboutSection,
+        homeSection,
+        skillSection,
+        projectsSection,
+        contactSection
+      );
+      aboutSection.classList.add("about-active");
+    }, 3000);
   } else if (page === 2) {
-    hideElements(
-      skillSection,
-      aboutSection,
-      homeSection,
-      projectsSection,
-      contactSection
-    );
+    aboutSection.classList.add("about-deactive");
+    setTimeout(() => {
+      hideElements(
+        skillSection,
+        aboutSection,
+        homeSection,
+        projectsSection,
+        contactSection
+      );
+      skillSection.classList.add("skills-active");
+    }, 3000);
   } else if (page === 3) {
-    hideElements(
-      projectsSection,
-      homeSection,
-      aboutSection,
-      skillSection,
-      contactSection
-    );
+    skillSection.classList.add("skills-deactive");
+    setTimeout(() => {
+      hideElements(
+        projectsSection,
+        homeSection,
+        aboutSection,
+        skillSection,
+        contactSection
+      );
+      projectsSection.classList.add("project-active");
+    }, 3000);
   } else if (page === 4) {
-    hideElements(
-      contactSection,
-      homeSection,
-      aboutSection,
-      skillSection,
-      projectsSection
-    );
+    projectsSection.classList.add("projects-deactive");
+    setTimeout(() => {
+      hideElements(
+        contactSection,
+        homeSection,
+        aboutSection,
+        skillSection,
+        projectsSection
+      );
+      contactSection.classList.add("contact-active");
+    }, 3000);
   }
 });
 
