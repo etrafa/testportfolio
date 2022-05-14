@@ -1,60 +1,206 @@
 "using strict";
 
-// const controller = new ScrollMagic.Controller();
+const mainWrapper = document.querySelector(".main-wrapper");
 
-// const timeline = new TimelineMax();
+//SECTIONS
+const homeSection = document.querySelector(".home");
+const aboutSection = document.querySelector(".about");
+const skillSection = document.querySelector(".skills");
+const projectsSection = document.querySelector(".projects");
+const contactSection = document.querySelector(".contact");
 
-// timeline
-//   .from(".developer-name", 4, {
-//     fontSize: "20px",
-//     ease: Power3.easeInOut,
-//   })
-//   .from(
-//     ".title",
-//     4,
-//     {
-//       fontSize: "5px",
-//       ease: Power3.easeInOut,
-//     },
-//     "-=4"
-//   )
-//   .from(
-//     ".balloon-first",
-//     4,
-//     {
-//       bottom: "80%",
-//       ease: Power1.easeInOut,
-//     },
-//     "-=4"
-//   );
-// const scene = new ScrollMagic.Scene({
-//   triggerElement: ".home",
-//   duration: "100%",
-//   triggerHook: 0,
-//   offset: "20",
-// })
-//   .setTween(timeline)
-//   .setPin(".home")
-//   .addTo(controller);
+//NAV ELEMENTS
+const navAbout = document.querySelector(".nav-about");
+const navSkills = document.querySelector(".nav-skills");
+const navProjects = document.querySelector(".nav-projects");
+const navContact = document.querySelector(".nav-contact");
 
-// const homeSection = document.querySelector(".home");
-// const aboutSection = document.querySelector(".about");
+//ELEMENTS
+const developerName = document.querySelector(".developer-name");
+const title = document.querySelector(".title");
 
-const keyCounter = 0;
+let keyCounter = 1;
 
-// document.addEventListener("keyup", (e) => {
-//   if (e.key === "ArrowDown") {
-//     homeSection.classList.add("home-active");
-//     console.log(e.key);
-//   } else if (e.key === "ArrowUp") {
-//     homeSection.classList.remove("home-active");
-//     console.log(e.key);
-//   }
-// });
+document.addEventListener("keyup", (e) => {
+  console.log(e.key);
+  if (e.key === "ArrowDown" && keyCounter === 1) {
+    developerName.classList.add("developer-name-animation");
+    title.classList.add("title-animation");
+    aboutSection.classList.add("about-active");
+    keyCounter = keyCounter + 1;
+    setTimeout(() => {
+      developerName.style.display = "none";
+      title.style.display = "none";
+    }, 3000);
+  } else if (e.key === "ArrowDown" && keyCounter === 2) {
+    aboutSection.classList.add("about-deactive");
+    skillSection.classList.add("skills-active");
+    keyCounter = keyCounter + 1;
+    setTimeout(() => {
+      aboutSection.style.display = "none";
+    }, 3000);
+  } else if (e.key === "ArrowDown" && keyCounter === 3) {
+    skillSection.classList.add("skills-deactive");
+    projectsSection.classList.add("projects-active");
+    keyCounter = keyCounter + 1;
+    setTimeout(() => {
+      skillSection.style.display = "none";
+    }, 3000);
+  } else if (e.key === "ArrowDown" && keyCounter === 4) {
+    projectsSection.classList.add("projects-deactive");
+    contactSection.classList.add("contact-active");
+    setTimeout(() => {
+      projectsSection.style.display = "none";
+    }, 3000);
+  } else if (keyCounter > 4) {
+    return keyCounter === 4;
+  }
+});
 
-// const typed = new Typed(".developer-name", {
-//   strings: ["Etem Senel"],
-//   typeSpeed: 160,
-//   loop: false,
-//   showCursor: false,
-// });
+//HIDE SECTIONS ONCLICK
+const hideElements = (el1, el2, el3, el4, el5) => {
+  el1.style.display = "block";
+  el2.style.display = "none";
+  el3.style.display = "none";
+  el4.style.display = "none";
+  el5.style.display = "none";
+};
+
+navAbout.addEventListener("click", () => {
+  hideElements(
+    aboutSection,
+    skillSection,
+    projectsSection,
+    contactSection,
+    homeSection
+  );
+});
+
+navSkills.addEventListener("click", () => {
+  hideElements(
+    skillSection,
+    aboutSection,
+    projectsSection,
+    contactSection,
+    homeSection
+  );
+});
+navProjects.addEventListener("click", () => {
+  hideElements(
+    projectsSection,
+    aboutSection,
+    skillSection,
+    contactSection,
+    homeSection
+  );
+});
+navContact.addEventListener("click", () => {
+  hideElements(
+    contactSection,
+    aboutSection,
+    skillSection,
+    projectsSection,
+    homeSection
+  );
+});
+
+const prevPage = document.querySelector(".left-arrow");
+const nextPage = document.querySelector(".right-arrow");
+
+let page = 0;
+
+nextPage.addEventListener("click", () => {
+  page += 1;
+  if (page >= 5) {
+    page = 0;
+  }
+  if (page === 0) {
+    hideElements(
+      homeSection,
+      aboutSection,
+      skillSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 1) {
+    hideElements(
+      aboutSection,
+      homeSection,
+      skillSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 2) {
+    hideElements(
+      skillSection,
+      aboutSection,
+      homeSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 3) {
+    hideElements(
+      projectsSection,
+      homeSection,
+      aboutSection,
+      skillSection,
+      contactSection
+    );
+  } else if (page === 4) {
+    hideElements(
+      contactSection,
+      homeSection,
+      aboutSection,
+      skillSection,
+      projectsSection
+    );
+  }
+});
+
+prevPage.addEventListener("click", () => {
+  page -= 1;
+  if (page <= 0) {
+    page = 0;
+  }
+  if (page === 0) {
+    hideElements(
+      homeSection,
+      aboutSection,
+      skillSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 1) {
+    hideElements(
+      aboutSection,
+      homeSection,
+      skillSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 2) {
+    hideElements(
+      skillSection,
+      aboutSection,
+      homeSection,
+      projectsSection,
+      contactSection
+    );
+  } else if (page === 3) {
+    hideElements(
+      projectsSection,
+      homeSection,
+      aboutSection,
+      skillSection,
+      contactSection
+    );
+  } else if (page === 4) {
+    hideElements(
+      contactSection,
+      homeSection,
+      aboutSection,
+      skillSection,
+      projectsSection
+    );
+  }
+});

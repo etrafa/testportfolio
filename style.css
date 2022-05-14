@@ -10,12 +10,26 @@
   font-family: "Roboto", sans-serif;
 }
 
-section {
+/* NAVBAR STARTS HERE */
+
+main {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    url(assets/background.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  filter: brightness(1.2);
+  filter: saturate(2);
+  position: relative;
+  z-index: 9999;
+  animation: fadeIn;
+  animation-duration: 2s;
 }
 
-/* NAVBAR STARTS HERE */
+.main-active {
+  animation: darkBackground 4s forwards;
+}
 
 nav ul {
   display: flex;
@@ -34,22 +48,29 @@ nav > ul > li {
 }
 /* NAVBAR ENDS HERE */
 
-.home {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-    url(assets/background.png);
-  background-repeat: no-repeat;
-  background-position: right;
-  filter: brightness(1.2);
-  filter: saturate(2);
-  position: relative;
-  z-index: 9999;
-  animation: darkBackground 4s forwards;
+.left-arrow {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  cursor: pointer;
+  animation: fadeIn;
+  animation-duration: 5s;
 }
 
-/* .home-active {
-} */
+.right-arrow {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  color: #fff;
+}
 
 header {
   width: 100%;
@@ -60,23 +81,111 @@ header {
   text-align: center;
 }
 
-header h1 {
+.developer-name {
   font-family: "Allura", cursive;
-  font-size: 520%;
+  font-size: 820%;
   font-weight: bolder;
   color: #e96f92;
   position: relative;
   text-align: center;
+  animation: fadeIn;
+  animation-duration: 5s;
   /* animation: textToWhiteAnimation 4s forwards; */
 }
-
-header span {
+.title {
   font-size: 24px;
-  margin-top: 2rem;
+  display: block;
+  margin-top: 0rem;
+  animation: fadeIn;
+  animation-duration: 5s;
+  padding: 0 40px;
   /* animation: textToWhiteAnimation 4s forwards; */
 }
 
-.home img {
+.developer-name-animation {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+.title-animation {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
+.home-deactive {
+  display: none;
+}
+
+.about {
+  display: none;
+}
+
+.about-active {
+  display: block;
+  color: #fff;
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.about-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
+.skills {
+  display: none;
+}
+
+/* .skills-active {
+  display: block;
+  position: absolute;
+  top: 8%;
+  color: #fff;
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.skills-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+} */
+
+.projects {
+  display: none;
+}
+.projects-active {
+  display: block;
+  position: absolute;
+  top: 8%;
+  color: #fff;
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+
+.projects-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
+.contact {
+  display: none;
+}
+
+.skills {
+  color: #fff;
+}
+
+.contact-active {
+  display: block;
+  color: #fff;
+  animation: fadeIn;
+  animation-duration: 5s;
+}
+.contact-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
+main img {
   max-width: 100px;
   height: auto;
   position: absolute;
@@ -119,7 +228,143 @@ header span {
   }
 }
 
-.about {
-  background-color: aquamarine;
-  display: none;
+/* .about p {
+  line-height: 30px;
+  padding: 40px 50px;
+} */
+
+.about h3 {
+  color: #e96f92;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 3.5rem;
+}
+.about p {
+  line-height: 34px;
+  padding: 40px 50px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.about button {
+  display: block;
+  margin: 0 auto;
+  width: 170px;
+  height: 40px;
+  border: 1px solid lightgray;
+  cursor: pointer;
+  border-radius: 3px;
+  position: relative;
+  color: #e96f92;
+  font-weight: bold;
+}
+
+.about button i {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact {
+  color: #e96f92;
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact form {
+  position: relative;
+}
+
+.contact form input {
+  width: 95%;
+  height: 50px;
+  margin-top: 2rem;
+}
+
+.message-box {
+  height: 150px !important;
+}
+
+.contact button {
+  width: 170px;
+  height: 40px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border: 1px solid lightgray;
+  margin-right: auto;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: -60px;
+  right: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.social-medias {
+  margin-top: 6rem;
+}
+
+.social-accounts {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  padding-top: 2rem;
+}
+
+a {
+  color: #fff !important;
+}
+
+a:visited {
+  color: #fff !important;
+}
+
+.social-accounts i:hover {
+  color: #e96f92;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .contact {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .contact {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 120px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .contact {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 240px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .contact {
+    width: 30%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 340px;
+  }
 }
