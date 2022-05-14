@@ -116,7 +116,7 @@ nextPage.addEventListener("click", () => {
   if (page >= 5) {
     page = 0;
   }
-  console.log(page);
+  navContact.style.color = "#fff";
   if (page === 0) {
     hideElements(
       homeSection,
@@ -131,13 +131,13 @@ nextPage.addEventListener("click", () => {
     title.classList.add("title-animation");
     balloonOne.classList.add("balloon-dark");
     balloonTwo.classList.add("balloon-dark");
-    navAbout.style.color = "#fff";
+    navAbout.style.color = "#e96f92";
+    navAbout.style.borderBottom = "1px solid #e96f92";
     navSkills.style.color = "#fff";
     navProjects.style.color = "#fff";
     navContact.style.color = "#fff";
     nextPage.style.color = "#fff";
     prevPage.style.color = "#fff";
-
     setTimeout(() => {
       hideElements(
         aboutSection,
@@ -150,6 +150,10 @@ nextPage.addEventListener("click", () => {
     }, 3000);
   } else if (page === 2) {
     aboutSection.classList.add("about-deactive");
+    navSkills.style.color = "#e96f92";
+    navSkills.style.borderBottom = "1px solid #e96f92";
+    navAbout.style.color = "#fff";
+    navAbout.style.border = "none";
     setTimeout(() => {
       hideElements(
         skillSection,
@@ -162,6 +166,10 @@ nextPage.addEventListener("click", () => {
     }, 3000);
   } else if (page === 3) {
     skillSection.classList.add("skills-deactive");
+    navSkills.style.color = "#fff";
+    navSkills.style.border = "none";
+    navProjects.style.color = "#e96f92";
+    navProjects.style.borderBottom = "1px solid #e96f92";
     setTimeout(() => {
       hideElements(
         projectsSection,
@@ -174,6 +182,10 @@ nextPage.addEventListener("click", () => {
     }, 3000);
   } else if (page === 4) {
     projectsSection.classList.add("projects-deactive");
+    navContact.style.color = "#e96f92";
+    navContact.style.borderBottom = "1px solid #e96f92";
+    navProjects.style.color = "#fff";
+    navProjects.style.border = "none";
     setTimeout(() => {
       hideElements(
         contactSection,
