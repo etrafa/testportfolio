@@ -20,44 +20,10 @@ const developerName = document.querySelector(".developer-name");
 const title = document.querySelector(".title");
 const balloonOne = document.querySelector(".balloon1");
 const balloonTwo = document.querySelector(".balloon2");
-
-// let keyCounter = 1;
-
-// document.addEventListener("keyup", (e) => {
-//   console.log(e.key);
-//   if (e.key === "ArrowDown" && keyCounter === 1) {
-//     developerName.classList.add("developer-name-animation");
-//     title.classList.add("title-animation");
-//     aboutSection.classList.add("about-active");
-//     keyCounter = keyCounter + 1;
-//     setTimeout(() => {
-//       developerName.style.display = "none";
-//       title.style.display = "none";
-//     }, 3000);
-//   } else if (e.key === "ArrowDown" && keyCounter === 2) {
-//     aboutSection.classList.add("about-deactive");
-//     skillSection.classList.add("skills-active");
-//     keyCounter = keyCounter + 1;
-//     setTimeout(() => {
-//       aboutSection.style.display = "none";
-//     }, 3000);
-//   } else if (e.key === "ArrowDown" && keyCounter === 3) {
-//     skillSection.classList.add("skills-deactive");
-//     projectsSection.classList.add("projects-active");
-//     keyCounter = keyCounter + 1;
-//     setTimeout(() => {
-//       skillSection.style.display = "none";
-//     }, 3000);
-//   } else if (e.key === "ArrowDown" && keyCounter === 4) {
-//     projectsSection.classList.add("projects-deactive");
-//     contactSection.classList.add("contact-active");
-//     setTimeout(() => {
-//       projectsSection.style.display = "none";
-//     }, 3000);
-//   } else if (keyCounter > 4) {
-//     return keyCounter === 4;
-//   }
-// });
+const prevButtonText = document.querySelector(".prev-text");
+const nextButtonText = document.querySelector(".next-text");
+const prevPageButton = document.querySelector(".left-arrow");
+const nextPageButton = document.querySelector(".right-arrow");
 
 //HIDE SECTIONS ONCLICK
 const hideElements = (el1, el2, el3, el4, el5) => {
@@ -106,17 +72,15 @@ navContact.addEventListener("click", () => {
   );
 });
 
-const prevPage = document.querySelector(".left-arrow");
-const nextPage = document.querySelector(".right-arrow");
-
 let page = 0;
 
-nextPage.addEventListener("click", () => {
+nextPageButton.addEventListener("click", () => {
   page += 1;
   if (page >= 5) {
     page = 0;
   }
   navContact.style.color = "#fff";
+
   if (page === 0) {
     hideElements(
       homeSection,
@@ -126,6 +90,7 @@ nextPage.addEventListener("click", () => {
       contactSection
     );
   } else if (page === 1) {
+    nextButtonText.textContent = "Skills";
     mainWrapper.classList.add("main-active");
     developerName.classList.add("developer-name-animation");
     title.classList.add("title-animation");
@@ -136,8 +101,8 @@ nextPage.addEventListener("click", () => {
     navSkills.style.color = "#fff";
     navProjects.style.color = "#fff";
     navContact.style.color = "#fff";
-    nextPage.style.color = "#fff";
-    prevPage.style.color = "#fff";
+    nextPageButton.style.color = "#fff";
+    prevPageButton.style.color = "#fff";
     setTimeout(() => {
       hideElements(
         aboutSection,
@@ -149,6 +114,7 @@ nextPage.addEventListener("click", () => {
       aboutSection.classList.add("about-active");
     }, 3000);
   } else if (page === 2) {
+    nextButtonText.textContent = "Projects";
     aboutSection.classList.add("about-deactive");
     navSkills.style.color = "#e96f92";
     navSkills.style.borderBottom = "1px solid #e96f92";
@@ -165,6 +131,7 @@ nextPage.addEventListener("click", () => {
       skillSection.classList.add("skills-active");
     }, 3000);
   } else if (page === 3) {
+    nextButtonText.textContent = "Contact";
     skillSection.classList.add("skills-deactive");
     navSkills.style.color = "#fff";
     navSkills.style.border = "none";
@@ -181,6 +148,7 @@ nextPage.addEventListener("click", () => {
       projectsSection.classList.add("project-active");
     }, 3000);
   } else if (page === 4) {
+    nextButtonText.textContent = "Home";
     projectsSection.classList.add("projects-deactive");
     navContact.style.color = "#e96f92";
     navContact.style.borderBottom = "1px solid #e96f92";
@@ -199,7 +167,7 @@ nextPage.addEventListener("click", () => {
   }
 });
 
-prevPage.addEventListener("click", () => {
+prevPageButton.addEventListener("click", () => {
   page -= 1;
   if (page <= 0) {
     page = 0;
