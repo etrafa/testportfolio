@@ -198,10 +198,6 @@ nav {
 
 /* HOME SECTION STARTS HERE */
 
-.home {
-  display: none;
-}
-
 .home-active {
   animation: fadeOut 4s forwards;
 }
@@ -323,7 +319,7 @@ header {
 
 /* WORK SECTION STARTS HERE */
 
-.key-down {
+.works {
   display: none;
 }
 
