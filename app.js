@@ -211,7 +211,7 @@ const mainContainer = document.querySelector(".main-wrapper");
 const homeSection = document.querySelector(".home");
 const aboutSection = document.querySelector(".about");
 const skillSection = document.querySelector(".skills");
-const projectsSection = document.querySelector(".projects");
+const worksSection = document.querySelector(".works");
 const contactSection = document.querySelector(".contact");
 
 //ELEMENTS
@@ -260,6 +260,7 @@ keyDownButton.addEventListener("click", () => {
     skillSection.classList.add("skills-deactive");
     keyDownButton.style.display = "none";
     setTimeout(() => {
+      worksSection.classList.add("works-active");
       skillSection.classList.remove("skills-active");
       keyDownButton.style.display = "block";
     }, 3000);
