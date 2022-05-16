@@ -5,7 +5,7 @@
 // //NAV ELEMENTS
 // const navAbout = document.querySelector(".nav-about");
 // const navSkills = document.querySelector(".nav-skills");
-// const navProjects = document.querySelector(".nav-projects");
+// const navWorks = document.querySelector(".nav-works");
 // const navContact = document.querySelector(".nav-contact");
 
 // //ELEMENTS
@@ -29,7 +29,7 @@
 //   hideElements(
 //     aboutSection,
 //     skillSection,
-//     projectsSection,
+//     worksSection,
 //     contactSection,
 //     homeSection
 //   );
@@ -39,14 +39,14 @@
 //   hideElements(
 //     skillSection,
 //     aboutSection,
-//     projectsSection,
+//     worksSection,
 //     contactSection,
 //     homeSection
 //   );
 // });
-// navProjects.addEventListener("click", () => {
+// navworks.addEventListener("click", () => {
 //   hideElements(
-//     projectsSection,
+//     worksSection,
 //     aboutSection,
 //     skillSection,
 //     contactSection,
@@ -58,7 +58,7 @@
 //     contactSection,
 //     aboutSection,
 //     skillSection,
-//     projectsSection,
+//     worksSection,
 //     homeSection
 //   );
 // });
@@ -77,7 +77,7 @@
 //       homeSection,
 //       aboutSection,
 //       skillSection,
-//       projectsSection,
+//       worksSection,
 //       contactSection
 //     );
 //   } else if (page === 1) {
@@ -90,7 +90,7 @@
 //     navAbout.style.color = "#e96f92";
 //     navAbout.style.borderBottom = "1px solid #e96f92";
 //     navSkills.style.color = "#fff";
-//     navProjects.style.color = "#fff";
+//     navworks.style.color = "#fff";
 //     navContact.style.color = "#fff";
 //     nextPageButton.style.color = "#fff";
 //     prevPageButton.style.color = "#fff";
@@ -99,13 +99,13 @@
 //         aboutSection,
 //         homeSection,
 //         skillSection,
-//         projectsSection,
+//         worksSection,
 //         contactSection
 //       );
 //       aboutSection.classList.add("about-active");
 //     }, 3000);
 //   } else if (page === 2) {
-//     nextButtonText.textContent = "Projects";
+//     nextButtonText.textContent = "Works";
 //     aboutSection.classList.add("about-deactive");
 //     navSkills.style.color = "#e96f92";
 //     navSkills.style.borderBottom = "1px solid #e96f92";
@@ -116,7 +116,7 @@
 //         skillSection,
 //         aboutSection,
 //         homeSection,
-//         projectsSection,
+//         WorksSection,
 //         contactSection
 //       );
 //       skillSection.classList.add("skills-active");
@@ -126,11 +126,11 @@
 //     skillSection.classList.add("skills-deactive");
 //     navSkills.style.color = "#fff";
 //     navSkills.style.border = "none";
-//     navProjects.style.color = "#e96f92";
-//     navProjects.style.borderBottom = "1px solid #e96f92";
+//     navworks.style.color = "#e96f92";
+//     navworks.style.borderBottom = "1px solid #e96f92";
 //     setTimeout(() => {
 //       hideElements(
-//         projectsSection,
+//         worksSection,
 //         homeSection,
 //         aboutSection,
 //         skillSection,
@@ -239,5 +239,29 @@ keyDownButton.addEventListener("click", () => {
     balloonTwo.classList.add("balloon-dark");
     homeSection.classList.add("home-active");
     hamburgerMenu.style.color = "#fff";
+    keyDownButton.style.display = "none";
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      aboutSection.classList.add("about-active");
+      keyDownButton.style.display = "block";
+      keyDownButton.style.bottom = "0";
+      keyDownButton.style.backgroundColor = "#000";
+    }, 4000);
+  } else if (keyCounterForSmallScreen === 1) {
+    aboutSection.classList.add("about-deactive");
+    keyDownButton.style.display = "none";
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      aboutSection.classList.remove("about-active");
+      skillSection.classList.add("skills-active");
+      keyDownButton.style.display = "block";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 2) {
+    skillSection.classList.add("skills-deactive");
+    keyDownButton.style.display = "none";
+    setTimeout(() => {
+      skillSection.classList.remove("skills-active");
+      keyDownButton.style.display = "block";
+    }, 3000);
   }
 });

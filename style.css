@@ -24,7 +24,7 @@ a:visited {
 
 /* MAIN SECTION SINGLE PAGE STARTS HERE */
 
-main {
+.main-wrapper {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
@@ -231,11 +231,27 @@ header {
 }
 /* HOME SECTION ENDS HERE */
 
+/* ABOUT SECTION STARTS HERE */
+.about {
+  display: none;
+}
+
+.about-active {
+  display: block;
+  padding-bottom: 8rem;
+  animation: fadeIn;
+  animation-duration: 5s;
+  color: #fff;
+}
+.about-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
 .about h3 {
   color: #e96f92;
   font-size: 36px;
   text-align: center;
-  padding-top: 3.5rem;
 }
 .about p {
   line-height: 34px;
@@ -251,7 +267,7 @@ header {
   height: 40px;
   border: 1px solid lightgray;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 5px;
   position: relative;
   color: #e96f92;
   font-weight: bold;
@@ -265,6 +281,66 @@ header {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/* ABOUT SECTION STARTS HERE */
-
 /* ABOUT SECTION ENDS HERE */
+
+/* SKILL SECTION STARTS HERE */
+
+.skills {
+  display: none;
+}
+
+.skills-active {
+  display: block;
+  padding-bottom: 8rem;
+  animation: fadeIn;
+  animation-duration: 5s;
+  color: #fff;
+  text-align: center;
+}
+
+.skills-deactive {
+  animation: fadeOut;
+  animation-duration: 3s;
+}
+
+.skills h3 {
+  color: #e96f92;
+  font-size: 36px;
+}
+
+.skills h6 {
+  font-size: 18px;
+  padding: 2rem 0;
+}
+
+.skills picture img {
+  margin-top: 2rem;
+  max-width: 100px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+/* SKILL SECTION ENDS HERE */
+
+/* WORK SECTION STARTS HERE */
+
+.key-down {
+  display: none;
+}
+
+.works h3 {
+  color: #e96f92;
+  font-size: 36px;
+  text-align: center;
+}
+
+.work {
+  width: 95%;
+  height: 500px;
+  background-color: red;
+  margin: 2rem auto;
+  border-radius: 24px;
+  color: #fff;
+  text-align: center;
+}
+
+/* WORK SECTION ENDS HERE */

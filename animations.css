@@ -6,60 +6,70 @@
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   8% {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   10% {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   12% {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   14% {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   16% {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   18% {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   20% {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   22% {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
   100% {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
       url(assets/background.png);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: cover;
   }
 }
 
