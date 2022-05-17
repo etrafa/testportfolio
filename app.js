@@ -302,3 +302,10 @@ keyDownButton.addEventListener("click", () => {
     }, 3000);
   }
 });
+
+const playVideoButton = document.querySelector(".play-video-button");
+const cryptoVideo = document.getElementById("cryptoVideo");
+
+playVideoButton.addEventListener("click", () => {
+  cryptoVideo.play();
+});
