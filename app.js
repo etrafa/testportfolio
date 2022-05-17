@@ -233,16 +233,21 @@ closeNavButton.addEventListener("click", () => {
 let keyCounterForSmallScreen = 0;
 
 keyDownButton.addEventListener("click", () => {
+  if (keyCounterForSmallScreen > 4) {
+    keyCounterForSmallScreen = 0;
+  }
+
   if (keyCounterForSmallScreen === 0) {
     mainContainer.classList.add("main-active");
     balloonOne.classList.add("balloon-dark");
     balloonTwo.classList.add("balloon-dark");
-    homeSection.classList.add("home-active");
+    homeSection.classList.add("home-deactive");
     hamburgerMenu.style.color = "#fff";
     keyDownButton.style.display = "none";
     keyCounterForSmallScreen += 1;
     setTimeout(() => {
       aboutSection.classList.add("about-active");
+      homeSection.classList.remove("home-active");
       keyDownButton.style.display = "block";
       keyDownButton.style.bottom = "0";
       keyDownButton.style.backgroundColor = "#000";
@@ -252,17 +257,47 @@ keyDownButton.addEventListener("click", () => {
     keyDownButton.style.display = "none";
     keyCounterForSmallScreen += 1;
     setTimeout(() => {
+      window.scroll(0, 0);
       aboutSection.classList.remove("about-active");
+      aboutSection.classList.remove("about-deactive");
       skillSection.classList.add("skills-active");
       keyDownButton.style.display = "block";
     }, 3000);
   } else if (keyCounterForSmallScreen === 2) {
     skillSection.classList.add("skills-deactive");
     keyDownButton.style.display = "none";
+    keyCounterForSmallScreen += 1;
     setTimeout(() => {
+      window.scroll(0, 0);
       worksSection.classList.add("works-active");
       skillSection.classList.remove("skills-active");
+      skillSection.classList.remove("skills-deactive");
       keyDownButton.style.display = "block";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 3) {
+    worksSection.classList.add("works-deactive");
+    keyDownButton.style.display = "none";
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      contactSection.classList.add("contact-active");
+      worksSection.classList.remove("works-active");
+      worksSection.classList.remove("works-deactive");
+      keyDownButton.style.display = "block";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 4) {
+    contactSection.classList.add("contact-deactive");
+    keyDownButton.style.display = "none";
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      homeSection.classList.remove("home-deactive");
+      homeSection.classList.add("home-active");
+      mainContainer.classList.remove("main-active");
+      contactSection.classList.remove("contact-active");
+      contactSection.classList.remove("contact-deactive");
+      keyDownButton.style.display = "block";
+      balloonOne.classList.remove("balloon-dark");
+      balloonTwo.classList.remove("balloon-dark");
+      hamburgerMenu.style.color = "#000";
     }, 3000);
   }
 });
