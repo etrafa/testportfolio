@@ -340,10 +340,14 @@ header {
 /* SKILL SECTION ENDS HERE */
 
 /* WORK SECTION STARTS HERE */
-/* 
-.works {
+
+/* .works {
   display: none;
 } */
+
+.works {
+  overflow-x: hidden;
+}
 
 .works-active {
   display: block;

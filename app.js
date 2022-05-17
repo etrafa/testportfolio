@@ -303,9 +303,50 @@ keyDownButton.addEventListener("click", () => {
   }
 });
 
-const playVideoButton = document.querySelector(".play-video-button");
-const cryptoVideo = document.getElementById("cryptoVideo");
+// const playVideoButton = document.querySelector(".play-video-button");
+// const cryptoVideo = document.getElementById("cryptoVideo");
 
-playVideoButton.addEventListener("click", () => {
-  cryptoVideo.play();
+// playVideoButton.addEventListener("click", () => {
+//   cryptoVideo.play();
+// });
+
+const sr = new ScrollReveal();
+
+sr.reveal(".work-one", {
+  origin: "right",
+  distance: "50px",
+  duration: 800,
+  reset: false,
+});
+
+sr.reveal(".work-two", {
+  delay: 400,
+  origin: "left",
+  distance: "50px",
+  duration: 800,
+  reset: false,
+});
+
+sr.reveal(".work-three", {
+  delay: 400,
+  origin: "right",
+  distance: "50px",
+  duration: 800,
+  reset: false,
+});
+
+sr.reveal(".work-four", {
+  delay: 400,
+  origin: "left",
+  distance: "50px",
+  duration: 800,
+  reset: false,
+});
+
+sr.reveal(".work-five", {
+  delay: 400,
+  origin: "right",
+  distance: "50px",
+  duration: 800,
+  reset: false,
 });
