@@ -312,7 +312,10 @@ keyDownButton.addEventListener("click", () => {
 
 const myVideo = document.getElementById("myVideo");
 
-myVideo.volume = 0;
+myVideo.oncanplaythrough = function () {
+  myVideo.muted = true;
+  myVideo.play();
+};
 
 const sr = new ScrollReveal();
 
