@@ -448,7 +448,7 @@ header {
   animation: fadeIn;
   animation-duration: 5s;
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 8rem;
 }
 .contact-deactive {
   animation: fadeOut;

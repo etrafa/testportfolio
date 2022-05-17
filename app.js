@@ -3,10 +3,6 @@
 //
 
 // //NAV ELEMENTS
-// const navAbout = document.querySelector(".nav-about");
-// const navSkills = document.querySelector(".nav-skills");
-// const navWorks = document.querySelector(".nav-works");
-// const navContact = document.querySelector(".nav-contact");
 
 // //ELEMENTS
 // const developerName = document.querySelector(".developer-name");
@@ -222,6 +218,12 @@ const keyDownButton = document.querySelector(".key-down");
 const balloonOne = document.querySelector(".balloon1");
 const balloonTwo = document.querySelector(".balloon2");
 
+//NAVBAR ELEMENTS
+const navAbout = document.querySelector(".nav-about");
+const navSkills = document.querySelector(".nav-skills");
+const navWorks = document.querySelector(".nav-works");
+const navContact = document.querySelector(".nav-contact");
+
 hamburgerMenu.addEventListener("click", () => {
   navbarItems.classList.add("navbar-items-active");
 });
@@ -250,7 +252,6 @@ keyDownButton.addEventListener("click", () => {
       homeSection.classList.remove("home-active");
       keyDownButton.style.display = "block";
       keyDownButton.style.bottom = "0";
-      keyDownButton.style.backgroundColor = "#000";
     }, 4000);
   } else if (keyCounterForSmallScreen === 1) {
     aboutSection.classList.add("about-deactive");
