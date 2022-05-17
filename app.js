@@ -310,6 +310,10 @@ keyDownButton.addEventListener("click", () => {
 //   cryptoVideo.play();
 // });
 
+const myVideo = document.getElementById("myVideo");
+
+myVideo.volume = 0;
+
 const sr = new ScrollReveal();
 
 sr.reveal(".work-one", {
