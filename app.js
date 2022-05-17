@@ -310,11 +310,9 @@ keyDownButton.addEventListener("click", () => {
 //   cryptoVideo.play();
 // });
 
-const myVideo = document.getElementById("myVideo");
-
-myVideo.oncanplaythrough = function () {
-  myVideo.muted = true;
-  myVideo.play();
+window.onload = function () {
+  const element = document.getElementById("myVideo");
+  element.muted = "muted";
 };
 
 const sr = new ScrollReveal();
