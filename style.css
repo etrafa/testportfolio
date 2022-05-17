@@ -211,6 +211,10 @@ nav {
   animation: fadeOut 4s forwards;
 }
 
+.home {
+  display: none;
+}
+
 header {
   width: 100%;
   position: absolute;
@@ -336,10 +340,10 @@ header {
 /* SKILL SECTION ENDS HERE */
 
 /* WORK SECTION STARTS HERE */
-
+/* 
 .works {
   display: none;
-}
+} */
 
 .works-active {
   display: block;
