@@ -219,6 +219,7 @@ const balloonOne = document.querySelector(".balloon1");
 const balloonTwo = document.querySelector(".balloon2");
 
 //NAVBAR ELEMENTS
+const navHome = document.querySelector(".nav-home");
 const navAbout = document.querySelector(".nav-about");
 const navSkills = document.querySelector(".nav-skills");
 const navWorks = document.querySelector(".nav-works");
@@ -303,55 +304,44 @@ keyDownButton.addEventListener("click", () => {
   }
 });
 
-// const playVideoButton = document.querySelector(".play-video-button");
-// const cryptoVideo = document.getElementById("cryptoVideo");
+// const navbarElementClicked = (activeEl, style) => {
+//
+//   mainContainer.classList.add("main-active");
+//   balloonOne.classList.add("balloon-dark");
+//   balloonTwo.classList.add("balloon-dark");
+//   homeSection.classList.add("home-deactive");
+//   aboutSection.classList.add("about-deactive");
+//   skillSection.classList.add("skills-deactive");
+//   worksSection.classList.add("works-deactive");
+//   contactSection.classList.add("contact-deactive");
+//   aboutSection.classList.remove("about-active");
+//   skillSection.classList.remove("skills-active");
+//   worksSection.classList.remove("works-active");
+//   contactSection.classList.remove("contact-active");
+//   hamburgerMenu.style.color = "#fff";
+//   setTimeout(() => {}, 3000);
+// };
 
-// playVideoButton.addEventListener("click", () => {
-//   cryptoVideo.play();
-// });
+navAbout.addEventListener("click", () => {
+  navbarItems.classList.remove("navbar-items-active");
+  mainContainer.classList.add("main-active");
+  balloonOne.classList.add("balloon-dark");
+  balloonTwo.classList.add("balloon-dark");
+  homeSection.classList.add("home-deactive");
 
-window.onload = function () {
-  const element = document.getElementById("myVideo");
-  element.muted = "muted";
-};
-
-const sr = new ScrollReveal();
-
-sr.reveal(".work-one", {
-  origin: "right",
-  distance: "50px",
-  duration: 800,
-  reset: false,
+  setTimeout(() => {
+    aboutSection.classList.add("about-active");
+  }, 3000);
 });
 
-sr.reveal(".work-two", {
-  delay: 400,
-  origin: "left",
-  distance: "50px",
-  duration: 800,
-  reset: false,
-});
+navSkills.addEventListener("click", () => {
+  navbarItems.classList.remove("navbar-items-active");
+  mainContainer.classList.add("main-active");
+  balloonOne.classList.add("balloon-dark");
+  balloonTwo.classList.add("balloon-dark");
+  homeSection.classList.add("home-deactive");
 
-sr.reveal(".work-three", {
-  delay: 400,
-  origin: "right",
-  distance: "50px",
-  duration: 800,
-  reset: false,
-});
-
-sr.reveal(".work-four", {
-  delay: 400,
-  origin: "left",
-  distance: "50px",
-  duration: 800,
-  reset: false,
-});
-
-sr.reveal(".work-five", {
-  delay: 400,
-  origin: "right",
-  distance: "50px",
-  duration: 800,
-  reset: false,
+  setTimeout(() => {
+    skillSection.classList.add("skills-active");
+  }, 3000);
 });
