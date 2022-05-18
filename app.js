@@ -321,27 +321,3 @@ keyDownButton.addEventListener("click", () => {
 //   hamburgerMenu.style.color = "#fff";
 //   setTimeout(() => {}, 3000);
 // };
-
-navAbout.addEventListener("click", () => {
-  navbarItems.classList.remove("navbar-items-active");
-  mainContainer.classList.add("main-active");
-  balloonOne.classList.add("balloon-dark");
-  balloonTwo.classList.add("balloon-dark");
-  homeSection.classList.add("home-deactive");
-
-  setTimeout(() => {
-    aboutSection.classList.add("about-active");
-  }, 3000);
-});
-
-navSkills.addEventListener("click", () => {
-  navbarItems.classList.remove("navbar-items-active");
-  mainContainer.classList.add("main-active");
-  balloonOne.classList.add("balloon-dark");
-  balloonTwo.classList.add("balloon-dark");
-  homeSection.classList.add("home-deactive");
-
-  setTimeout(() => {
-    skillSection.classList.add("skills-active");
-  }, 3000);
-});

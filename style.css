@@ -534,3 +534,35 @@ header {
 }
 
 /* CONTACT SECTION ENDS HERE */
+
+@media only screen and (min-width: 600px) {
+  .contact {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contact {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 120px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .works {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 240px;
+  }
+}
