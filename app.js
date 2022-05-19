@@ -202,6 +202,9 @@
 //   }
 // });
 
+// BUTTONS
+const keyDownButton = document.querySelector(".key-down");
+
 // SECTIONS //
 const mainContainer = document.querySelector(".main-wrapper");
 const homeSection = document.querySelector(".home");
@@ -214,7 +217,6 @@ const contactSection = document.querySelector(".contact");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const navbarItems = document.querySelector(".navbar-items");
 const closeNavButton = document.querySelector(".close-button");
-const keyDownButton = document.querySelector(".key-down");
 const balloonOne = document.querySelector(".balloon1");
 const balloonTwo = document.querySelector(".balloon2");
 
@@ -303,21 +305,3 @@ keyDownButton.addEventListener("click", () => {
     }, 3000);
   }
 });
-
-// const navbarElementClicked = (activeEl, style) => {
-//
-//   mainContainer.classList.add("main-active");
-//   balloonOne.classList.add("balloon-dark");
-//   balloonTwo.classList.add("balloon-dark");
-//   homeSection.classList.add("home-deactive");
-//   aboutSection.classList.add("about-deactive");
-//   skillSection.classList.add("skills-deactive");
-//   worksSection.classList.add("works-deactive");
-//   contactSection.classList.add("contact-deactive");
-//   aboutSection.classList.remove("about-active");
-//   skillSection.classList.remove("skills-active");
-//   worksSection.classList.remove("works-active");
-//   contactSection.classList.remove("contact-active");
-//   hamburgerMenu.style.color = "#fff";
-//   setTimeout(() => {}, 3000);
-// };

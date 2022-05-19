@@ -36,7 +36,6 @@ a:visited {
   filter: brightness(1.2);
   filter: saturate(2);
   position: relative;
-  animation: darkBackground 4s forwards;
 }
 
 .main-active {
@@ -125,6 +124,10 @@ nav {
 .navbar-items li:hover {
   color: #fff;
 }
+.nav-home img {
+  width: 36px;
+  height: 36px;
+}
 
 .close-button {
   color: #fff;
@@ -208,10 +211,6 @@ nav {
 /* BALLOON / BALLOON ANIMATION*/
 
 /* HOME SECTION STARTS HERE */
-
-.home {
-  display: none;
-}
 
 .home-active {
   display: block;
@@ -359,9 +358,9 @@ header {
 
 /* WORK SECTION STARTS HERE */
 
-/* .works {
+.works {
   display: none;
-} */
+}
 
 .works-active {
   display: block;
@@ -387,7 +386,7 @@ header {
 }
 
 .work:last-child {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0rem;
 }
 
 .works h3 {
@@ -572,6 +571,75 @@ header {
 }
 
 @media only screen and (min-width: 992px) {
+  .arrows {
+    display: block;
+  }
+  .left-arrow {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    cursor: pointer;
+    animation: fadeIn;
+    animation-duration: 5s;
+  }
+
+  .right-arrow {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    animation: fadeIn;
+    animation-duration: 5s;
+  }
+
+  .left-arrow:hover,
+  .right-arrow:hover {
+    color: #fff;
+  }
+
+  .prev-text {
+    position: absolute;
+    left: 50px;
+    top: 24px;
+    font-size: 16px;
+    display: none;
+  }
+
+  .next-text {
+    position: absolute;
+    right: 50px;
+    top: 24px;
+    font-size: 16px;
+    display: none;
+  }
+
+  @keyframes nextTextAnimation {
+    from {
+      right: 0;
+    }
+    to {
+      right: 50px;
+    }
+  }
+  @keyframes prevTextAnimation {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50px;
+    }
+  }
+
+  .right-arrow:hover .next-text {
+    display: block;
+    animation: nextTextAnimation 0.5s forwards;
+  }
+  .left-arrow:hover .prev-text {
+    display: block;
+    animation: prevTextAnimation 0.5s forwards;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
