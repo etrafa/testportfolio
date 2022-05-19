@@ -622,7 +622,7 @@ header {
   }
 
   .skills {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
   }
   .skills picture img {
@@ -649,5 +649,9 @@ header {
 @media only screen and (min-width: 1500px) {
   .about p {
     padding: 40px 440px;
+  }
+  .skills {
+    width: 50%;
+    margin: 0 auto;
   }
 }
