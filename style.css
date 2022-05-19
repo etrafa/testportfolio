@@ -318,6 +318,10 @@ header {
 
 /* SKILL SECTION STARTS HERE */
 
+.skills {
+  display: none;
+}
+
 .skills-active {
   display: block;
   padding-bottom: 8rem;
@@ -355,19 +359,16 @@ header {
 
 /* WORK SECTION STARTS HERE */
 
-.works {
+/* .works {
   display: none;
-}
-
-.works {
-  overflow-x: hidden;
-}
+} */
 
 .works-active {
   display: block;
   animation: fadeIn;
   animation-duration: 5s;
   padding-bottom: 6rem;
+  overflow-x: hidden;
 }
 
 .works-deactive {
@@ -453,18 +454,15 @@ header {
   background-color: #e96f92;
 }
 
-/* .work video {
-   max-width: 95%;
-  height: 600px;
-  margin-top: 2rem;
-  border-radius: 20px;
-  display: none;
-} */
 .work img {
   max-width: 95%;
   height: 600px;
   margin-top: 2rem;
   border-radius: 20px;
+}
+
+.work video {
+  display: none;
 }
 
 /* WORK SECTION ENDS HERE */
@@ -567,6 +565,10 @@ header {
   .about p {
     padding: 40px 120px;
   }
+
+  .work {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -628,6 +630,21 @@ header {
   .skills picture img {
     max-width: 14 0px;
     margin: 4rem 2rem;
+  }
+
+  .work img {
+    display: none;
+  }
+  .work {
+    width: 60%;
+  }
+
+  .work video {
+    display: block;
+    max-width: 95%;
+    height: 600px;
+    border-radius: 20px;
+    margin: 2rem auto;
   }
 }
 
