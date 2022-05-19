@@ -260,6 +260,10 @@ header {
 
 /* ABOUT SECTION STARTS HERE */
 
+.about {
+  display: none;
+}
+
 .about-active {
   display: block;
   padding-bottom: 8rem;
@@ -314,10 +318,6 @@ header {
 
 /* SKILL SECTION STARTS HERE */
 
-.skills {
-  display: none;
-}
-
 .skills-active {
   display: block;
   padding-bottom: 8rem;
@@ -335,11 +335,14 @@ header {
 .skills h3 {
   color: #e96f92;
   font-size: 72px;
+  text-align: center;
 }
 
 .skills h6 {
   font-size: 18px;
   padding: 2rem 0;
+  text-align: center;
+  color: #fff;
 }
 
 .skills picture img {
@@ -613,8 +616,18 @@ header {
     padding: 40px 240px;
   }
 
-  .about h3 {
+  .about h3,
+  .skills h3 {
     margin-top: 3rem;
+  }
+
+  .skills {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .skills picture img {
+    max-width: 14 0px;
+    margin: 4rem 2rem;
   }
 }
 
@@ -626,14 +639,19 @@ header {
   .about p {
     padding: 40px 240px;
   }
+
   .skills picture img {
-    width: 120px;
-    margin: 40px 60px;
+    max-width: 120px;
+    margin: 4rem 2rem;
   }
 }
 
 @media only screen and (min-width: 1500px) {
   .about p {
     padding: 40px 440px;
+  }
+  skills picture img {
+    max-width: 160px;
+    margin: 4rem 2rem;
   }
 }
