@@ -307,6 +307,10 @@ keyDownButton.addEventListener("click", () => {
 });
 
 nextPageButton.addEventListener("click", () => {
+  if (keyCounterForSmallScreen > 4) {
+    keyCounterForSmallScreen = 0;
+  }
+
   if (keyCounterForSmallScreen === 0) {
     mainContainer.classList.add("main-active");
     balloonOne.classList.add("balloon-dark");
