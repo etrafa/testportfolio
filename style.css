@@ -36,6 +36,7 @@ a:visited {
   filter: brightness(1.2);
   filter: saturate(2);
   position: relative;
+  animation: darkBackground 4s forwards;
 }
 
 .main-active {
@@ -208,6 +209,10 @@ nav {
 
 /* HOME SECTION STARTS HERE */
 
+.home {
+  display: none;
+}
+
 .home-active {
   display: block;
   padding-bottom: 8rem;
@@ -254,9 +259,6 @@ header {
 /* HOME SECTION ENDS HERE */
 
 /* ABOUT SECTION STARTS HERE */
-.about {
-  display: none;
-}
 
 .about-active {
   display: block;
@@ -280,6 +282,7 @@ header {
   padding: 40px 50px;
   color: #fff;
   font-size: 18px;
+  line-height: 50px;
 }
 
 .about button {
@@ -608,5 +611,29 @@ header {
   }
   .about p {
     padding: 40px 240px;
+  }
+
+  .about h3 {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .contact {
+    width: 30%;
+    margin: 0 auto;
+  }
+  .about p {
+    padding: 40px 240px;
+  }
+  .skills picture img {
+    width: 120px;
+    margin: 40px 60px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .about p {
+    padding: 40px 440px;
   }
 }
