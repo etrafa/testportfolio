@@ -43,6 +43,10 @@ a:visited {
 }
 
 .key-down {
+  display: none;
+}
+
+.key-down {
   position: absolute;
   bottom: 10%;
   left: 50%;
@@ -238,12 +242,15 @@ header {
   font-size: 24px;
   display: block;
   margin-top: 0rem;
-  padding: 0 40px;
+  padding: 0.5rem 40px;
   font-family: "Overpass";
-  font-weight: 500;
+  font-weight: 400;
   animation: fadeIn;
   animation-duration: 6s;
+  background-color: #ffff00;
+  height: 40px;
 }
+
 /* HOME SECTION ENDS HERE */
 
 /* ABOUT SECTION STARTS HERE */
@@ -543,6 +550,10 @@ header {
 }
 
 @media only screen and (min-width: 768px) {
+  .developer-name {
+    font-size: 880%;
+  }
+
   .contact {
     width: 60%;
     margin: 0 auto;
@@ -553,6 +564,39 @@ header {
 }
 
 @media only screen and (min-width: 992px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .navbar-items li {
+    list-style: none;
+    font-size: 20px;
+    letter-spacing: 6px;
+    margin: 2rem 0;
+  }
+
+  .close-button {
+    display: none;
+  }
+  .hamburger-menu {
+    display: none !important;
+  }
+
+  .developer-name {
+    font-size: 1200%;
+  }
+
+  .title {
+    font-size: 36px;
+    display: inline-block;
+    height: 60px;
+  }
+
   .contact {
     width: 50%;
     margin: 0 auto;
