@@ -650,8 +650,4 @@ header {
   .about p {
     padding: 40px 440px;
   }
-  skills picture img {
-    max-width: 160px;
-    margin: 4rem 2rem;
-  }
 }
