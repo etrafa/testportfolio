@@ -6,11 +6,6 @@
 
 // //ELEMENTS
 // const developerName = document.querySelector(".developer-name");
-// const title = document.querySelector(".title");
-// const prevButtonText = document.querySelector(".prev-text");
-// const nextButtonText = document.querySelector(".next-text");
-// const prevPageButton = document.querySelector(".left-arrow");
-// const nextPageButton = document.querySelector(".right-arrow");
 
 // //HIDE SECTIONS ONCLICK
 // const hideElements = (el1, el2, el3, el4, el5) => {
@@ -204,6 +199,8 @@
 
 // BUTTONS
 const keyDownButton = document.querySelector(".key-down");
+const prevPageButton = document.querySelector(".left-arrow");
+const nextPageButton = document.querySelector(".right-arrow");
 
 // SECTIONS //
 const mainContainer = document.querySelector(".main-wrapper");
@@ -219,6 +216,9 @@ const navbarItems = document.querySelector(".navbar-items");
 const closeNavButton = document.querySelector(".close-button");
 const balloonOne = document.querySelector(".balloon1");
 const balloonTwo = document.querySelector(".balloon2");
+const prevButtonText = document.querySelector(".prev-text");
+const nextButtonText = document.querySelector(".next-text");
+const title = document.querySelector(".title");
 
 //NAVBAR ELEMENTS
 const navHome = document.querySelector(".nav-home");
@@ -302,6 +302,68 @@ keyDownButton.addEventListener("click", () => {
       balloonOne.classList.remove("balloon-dark");
       balloonTwo.classList.remove("balloon-dark");
       hamburgerMenu.style.color = "#000";
+    }, 3000);
+  }
+});
+
+nextPageButton.addEventListener("click", () => {
+  if (keyCounterForSmallScreen === 0) {
+    mainContainer.classList.add("main-active");
+    balloonOne.classList.add("balloon-dark");
+    balloonTwo.classList.add("balloon-dark");
+    homeSection.classList.add("home-deactive");
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      aboutSection.classList.add("about-active");
+      homeSection.classList.remove("home-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      nextButtonText.textContent = "Skills";
+    }, 4000);
+  } else if (keyCounterForSmallScreen === 1) {
+    aboutSection.classList.add("about-deactive");
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      aboutSection.classList.remove("about-active");
+      aboutSection.classList.remove("about-deactive");
+      skillSection.classList.add("skills-active");
+      nextButtonText.textContent = "Projects";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 2) {
+    skillSection.classList.add("skills-deactive");
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      worksSection.classList.add("works-active");
+      skillSection.classList.remove("skills-active");
+      skillSection.classList.remove("skills-deactive");
+      nextButtonText.textContent = "Contact";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 3) {
+    worksSection.classList.add("works-deactive");
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      contactSection.classList.add("contact-active");
+      worksSection.classList.remove("works-active");
+      worksSection.classList.remove("works-deactive");
+      nextButtonText.textContent = "Home";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 4) {
+    contactSection.classList.add("contact-deactive");
+    keyCounterForSmallScreen += 1;
+    setTimeout(() => {
+      homeSection.classList.remove("home-deactive");
+      homeSection.classList.add("home-active");
+      mainContainer.classList.remove("main-active");
+      contactSection.classList.remove("contact-active");
+      contactSection.classList.remove("contact-deactive");
+      balloonOne.classList.remove("balloon-dark");
+      balloonTwo.classList.remove("balloon-dark");
+      navbarItems.style.color = "#000";
+      title.style.color = "#000";
+      nextButtonText.textContent = "About";
     }, 3000);
   }
 });
