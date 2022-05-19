@@ -317,42 +317,54 @@ nextPageButton.addEventListener("click", () => {
       prevPageButton.style.color = "#fff";
       nextPageButton.style.color = "#fff";
       navbarItems.style.color = "#fff";
+      navAbout.style.color = "#ffff00";
       aboutSection.classList.add("about-active");
       homeSection.classList.remove("home-active");
       prevPageButton.classList.remove("left-arrow");
       prevPageButton.classList.add("left-arrow-active");
+      prevButtonText.textContent = "Home";
       nextButtonText.textContent = "Skills";
     }, 4000);
   } else if (keyCounterForSmallScreen === 1) {
     aboutSection.classList.add("about-deactive");
     keyCounterForSmallScreen += 1;
+    navAbout.style.color = "#fff";
     setTimeout(() => {
       aboutSection.classList.remove("about-active");
       aboutSection.classList.remove("about-deactive");
       skillSection.classList.add("skills-active");
+      navSkills.style.color = "#ffff00";
+      prevButtonText.textContent = "About";
       nextButtonText.textContent = "Projects";
     }, 3000);
   } else if (keyCounterForSmallScreen === 2) {
     skillSection.classList.add("skills-deactive");
     keyCounterForSmallScreen += 1;
+    navSkills.style.color = "#fff";
     setTimeout(() => {
       worksSection.classList.add("works-active");
       skillSection.classList.remove("skills-active");
       skillSection.classList.remove("skills-deactive");
+      navWorks.style.color = "#ffff00";
+      prevButtonText.textContent = "Skills";
       nextButtonText.textContent = "Contact";
     }, 3000);
   } else if (keyCounterForSmallScreen === 3) {
     worksSection.classList.add("works-deactive");
     keyCounterForSmallScreen += 1;
+    navWorks.style.color = "#fff";
     setTimeout(() => {
       contactSection.classList.add("contact-active");
       worksSection.classList.remove("works-active");
       worksSection.classList.remove("works-deactive");
+      navContact.style.color = "#ffff00";
+      prevButtonText.textContent = "Projects";
       nextButtonText.textContent = "Home";
     }, 3000);
   } else if (keyCounterForSmallScreen === 4) {
     contactSection.classList.add("contact-deactive");
     keyCounterForSmallScreen += 1;
+    navContact.style.color = "#fff";
     setTimeout(() => {
       homeSection.classList.remove("home-deactive");
       homeSection.classList.add("home-active");
@@ -361,8 +373,12 @@ nextPageButton.addEventListener("click", () => {
       contactSection.classList.remove("contact-deactive");
       balloonOne.classList.remove("balloon-dark");
       balloonTwo.classList.remove("balloon-dark");
-      navbarItems.style.color = "#000";
       title.style.color = "#000";
+      prevPageButton.style.color = "#000";
+      nextPageButton.style.color = "#000";
+      prevButtonText.style.color = "#fff";
+      nextButtonText.style.color = "#fff";
+      prevButtonText.textContent = "Contact";
       nextButtonText.textContent = "About";
     }, 3000);
   }

@@ -571,9 +571,14 @@ header {
 }
 
 @media only screen and (min-width: 992px) {
+  header {
+    width: 85%;
+  }
+
   .arrows {
     display: block;
   }
+
   .left-arrow {
     display: none !important;
   }
@@ -643,7 +648,7 @@ header {
     display: block;
     animation: nextTextAnimation 0.5s forwards;
   }
-  .left-arrow:hover .prev-text {
+  .left-arrow-active:hover .prev-text {
     display: block;
     animation: prevTextAnimation 0.5s forwards;
   }
