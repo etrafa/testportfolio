@@ -288,6 +288,13 @@ header {
   line-height: 50px;
 }
 
+.about span {
+  background-color: #ffff00;
+  color: #000;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
 .about button {
   display: block;
   margin: 0 auto;
