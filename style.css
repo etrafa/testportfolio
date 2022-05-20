@@ -584,15 +584,19 @@ header {
 
   .arrows {
     display: block;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .left-arrow {
-    display: none !important;
+    display: none;
   }
 
   .left-arrow-active {
     position: absolute;
-    left: 3%;
+    left: 53%;
     top: 50%;
     cursor: pointer;
     animation: fadeIn;
@@ -601,7 +605,7 @@ header {
 
   .right-arrow {
     position: absolute;
-    right: 3%;
+    right: -47%;
     top: 50%;
     transform: translate(-50%);
     cursor: pointer;
