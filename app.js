@@ -316,6 +316,7 @@ nextPageButton.addEventListener("click", () => {
     balloonOne.classList.add("balloon-dark");
     balloonTwo.classList.add("balloon-dark");
     homeSection.classList.add("home-deactive");
+    nextPageButton.style.display = "none";
     keyCounterForSmallScreen += 1;
     setTimeout(() => {
       prevPageButton.style.color = "#fff";
@@ -326,6 +327,7 @@ nextPageButton.addEventListener("click", () => {
       homeSection.classList.remove("home-active");
       prevPageButton.classList.remove("left-arrow");
       prevPageButton.classList.add("left-arrow-active");
+      nextPageButton.style.display = "block";
       prevButtonText.textContent = "Home";
       nextButtonText.textContent = "Skills";
     }, 4000);
@@ -333,6 +335,8 @@ nextPageButton.addEventListener("click", () => {
     aboutSection.classList.add("about-deactive");
     keyCounterForSmallScreen += 1;
     navAbout.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
     setTimeout(() => {
       aboutSection.classList.remove("about-active");
       aboutSection.classList.remove("about-deactive");
@@ -340,11 +344,15 @@ nextPageButton.addEventListener("click", () => {
       navSkills.style.color = "#ffff00";
       prevButtonText.textContent = "About";
       nextButtonText.textContent = "Projects";
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
     }, 3000);
   } else if (keyCounterForSmallScreen === 2) {
     skillSection.classList.add("skills-deactive");
     keyCounterForSmallScreen += 1;
     navSkills.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
     setTimeout(() => {
       worksSection.classList.add("works-active");
       skillSection.classList.remove("skills-active");
@@ -352,11 +360,15 @@ nextPageButton.addEventListener("click", () => {
       navWorks.style.color = "#ffff00";
       prevButtonText.textContent = "Skills";
       nextButtonText.textContent = "Contact";
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
     }, 3000);
   } else if (keyCounterForSmallScreen === 3) {
     worksSection.classList.add("works-deactive");
     keyCounterForSmallScreen += 1;
     navWorks.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
     setTimeout(() => {
       contactSection.classList.add("contact-active");
       worksSection.classList.remove("works-active");
@@ -364,11 +376,15 @@ nextPageButton.addEventListener("click", () => {
       navContact.style.color = "#ffff00";
       prevButtonText.textContent = "Projects";
       nextButtonText.textContent = "Home";
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
     }, 3000);
   } else if (keyCounterForSmallScreen === 4) {
     contactSection.classList.add("contact-deactive");
     keyCounterForSmallScreen += 1;
     navContact.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
     setTimeout(() => {
       homeSection.classList.remove("home-deactive");
       homeSection.classList.add("home-active");
@@ -384,6 +400,8 @@ nextPageButton.addEventListener("click", () => {
       nextButtonText.style.color = "#fff";
       prevButtonText.textContent = "Contact";
       nextButtonText.textContent = "About";
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
     }, 3000);
   }
 });

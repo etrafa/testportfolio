@@ -609,6 +609,12 @@ header {
     animation-duration: 5s;
   }
 
+  .left-arrow-deactive,
+  .right-arrow-deactive {
+    animation: fadeOut;
+    animation-duration: 4s;
+  }
+
   .left-arrow:hover,
   .right-arrow:hover {
     color: #fff;
@@ -748,6 +754,9 @@ header {
   .skills picture img {
     max-width: 120px;
     margin: 4rem 2rem;
+  }
+  .work video:hover {
+    transform: scale(1.2);
   }
 }
 
