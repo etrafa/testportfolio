@@ -209,6 +209,10 @@ nav {
 
 /* HOME SECTION STARTS HERE */
 
+.home {
+  display: none;
+}
+
 .home-active {
   display: block;
   padding-bottom: 8rem;

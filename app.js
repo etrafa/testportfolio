@@ -1,201 +1,4 @@
-// "using strict";
-
-//
-
-// //NAV ELEMENTS
-
-// //ELEMENTS
-// const developerName = document.querySelector(".developer-name");
-
-// //HIDE SECTIONS ONCLICK
-// const hideElements = (el1, el2, el3, el4, el5) => {
-//   el1.style.display = "block";
-//   el2.style.display = "none";
-//   el3.style.display = "none";
-//   el4.style.display = "none";
-//   el5.style.display = "none";
-// };
-
-// navAbout.addEventListener("click", () => {
-//   hideElements(
-//     aboutSection,
-//     skillSection,
-//     worksSection,
-//     contactSection,
-//     homeSection
-//   );
-// });
-
-// navSkills.addEventListener("click", () => {
-//   hideElements(
-//     skillSection,
-//     aboutSection,
-//     worksSection,
-//     contactSection,
-//     homeSection
-//   );
-// });
-// navworks.addEventListener("click", () => {
-//   hideElements(
-//     worksSection,
-//     aboutSection,
-//     skillSection,
-//     contactSection,
-//     homeSection
-//   );
-// });
-// navContact.addEventListener("click", () => {
-//   hideElements(
-//     contactSection,
-//     aboutSection,
-//     skillSection,
-//     worksSection,
-//     homeSection
-//   );
-// });
-
-// let page = 0;
-
-// nextPageButton.addEventListener("click", () => {
-//   page += 1;
-//   if (page >= 5) {
-//     page = 0;
-//   }
-//   navContact.style.color = "#fff";
-
-//   if (page === 0) {
-//     hideElements(
-//       homeSection,
-//       aboutSection,
-//       skillSection,
-//       worksSection,
-//       contactSection
-//     );
-//   } else if (page === 1) {
-//     nextButtonText.textContent = "Skills";
-//     mainWrapper.classList.add("main-active");
-//     developerName.classList.add("developer-name-animation");
-//     title.classList.add("title-animation");
-//     balloonOne.classList.add("balloon-dark");
-//     balloonTwo.classList.add("balloon-dark");
-//     navAbout.style.color = "#e96f92";
-//     navAbout.style.borderBottom = "1px solid #e96f92";
-//     navSkills.style.color = "#fff";
-//     navworks.style.color = "#fff";
-//     navContact.style.color = "#fff";
-//     nextPageButton.style.color = "#fff";
-//     prevPageButton.style.color = "#fff";
-//     setTimeout(() => {
-//       hideElements(
-//         aboutSection,
-//         homeSection,
-//         skillSection,
-//         worksSection,
-//         contactSection
-//       );
-//       aboutSection.classList.add("about-active");
-//     }, 3000);
-//   } else if (page === 2) {
-//     nextButtonText.textContent = "Works";
-//     aboutSection.classList.add("about-deactive");
-//     navSkills.style.color = "#e96f92";
-//     navSkills.style.borderBottom = "1px solid #e96f92";
-//     navAbout.style.color = "#fff";
-//     navAbout.style.border = "none";
-//     setTimeout(() => {
-//       hideElements(
-//         skillSection,
-//         aboutSection,
-//         homeSection,
-//         WorksSection,
-//         contactSection
-//       );
-//       skillSection.classList.add("skills-active");
-//     }, 3000);
-//   } else if (page === 3) {
-//     nextButtonText.textContent = "Contact";
-//     skillSection.classList.add("skills-deactive");
-//     navSkills.style.color = "#fff";
-//     navSkills.style.border = "none";
-//     navworks.style.color = "#e96f92";
-//     navworks.style.borderBottom = "1px solid #e96f92";
-//     setTimeout(() => {
-//       hideElements(
-//         worksSection,
-//         homeSection,
-//         aboutSection,
-//         skillSection,
-//         contactSection
-//       );
-//       projectsSection.classList.add("project-active");
-//     }, 3000);
-//   } else if (page === 4) {
-//     nextButtonText.textContent = "Home";
-//     projectsSection.classList.add("projects-deactive");
-//     navContact.style.color = "#e96f92";
-//     navContact.style.borderBottom = "1px solid #e96f92";
-//     navProjects.style.color = "#fff";
-//     navProjects.style.border = "none";
-//     setTimeout(() => {
-//       hideElements(
-//         contactSection,
-//         homeSection,
-//         aboutSection,
-//         skillSection,
-//         projectsSection
-//       );
-//       contactSection.classList.add("contact-active");
-//     }, 3000);
-//   }
-// });
-
-// prevPageButton.addEventListener("click", () => {
-//   page -= 1;
-//   if (page <= 0) {
-//     page = 0;
-//   }
-//   if (page === 0) {
-//     hideElements(
-//       homeSection,
-//       aboutSection,
-//       skillSection,
-//       projectsSection,
-//       contactSection
-//     );
-//   } else if (page === 1) {
-//     hideElements(
-//       aboutSection,
-//       homeSection,
-//       skillSection,
-//       projectsSection,
-//       contactSection
-//     );
-//   } else if (page === 2) {
-//     hideElements(
-//       skillSection,
-//       aboutSection,
-//       homeSection,
-//       projectsSection,
-//       contactSection
-//     );
-//   } else if (page === 3) {
-//     hideElements(
-//       projectsSection,
-//       homeSection,
-//       aboutSection,
-//       skillSection,
-//       contactSection
-//     );
-//   } else if (page === 4) {
-//     hideElements(
-//       contactSection,
-//       homeSection,
-//       aboutSection,
-//       skillSection,
-//       projectsSection
-//     );
-//   }
-// });
+"using strict";
 
 // BUTTONS
 const keyDownButton = document.querySelector(".key-down");
@@ -486,6 +289,200 @@ prevPageButton.addEventListener("click", () => {
       navContact.style.color = "#fff";
       prevButtonText.textContent = "Skills";
       nextButtonText.textContent = "Contact";
+    }, 3000);
+  }
+});
+
+navAbout.addEventListener("click", () => {
+  if (keyCounterForSmallScreen === 0) {
+    mainContainer.classList.add("main-active");
+    balloonOne.classList.add("balloon-dark");
+    balloonTwo.classList.add("balloon-dark");
+    homeSection.classList.add("home-deactive");
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 1;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navAbout.style.color = "#ffff00";
+      aboutSection.classList.add("about-active");
+      homeSection.classList.remove("home-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navSkills.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "Home";
+      nextButtonText.textContent = "Skills";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 2) {
+    skillSection.classList.add("skills-deactive");
+    keyCounterForSmallScreen = 1;
+    navSkills.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navAbout.style.color = "#ffff00";
+      aboutSection.classList.add("about-active");
+      skillSection.classList.remove("skills-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navSkills.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "Home";
+      nextButtonText.textContent = "Skills";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 3) {
+    worksSection.classList.add("works-deactive");
+    navWorks.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 1;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navAbout.style.color = "#ffff00";
+      aboutSection.classList.add("about-active");
+      worksSection.classList.remove("works-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navSkills.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "Home";
+      nextButtonText.textContent = "Skills";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 4) {
+    contactSection.classList.add("contact-deactive");
+    navContact.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 1;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navAbout.style.color = "#ffff00";
+      aboutSection.classList.add("about-active");
+      contactSection.classList.remove("contact-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navSkills.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "Home";
+      nextButtonText.textContent = "Skills";
+    }, 3000);
+  }
+});
+
+navSkills.addEventListener("click", () => {
+  if (keyCounterForSmallScreen === 0) {
+    mainContainer.classList.add("main-active");
+    balloonOne.classList.add("balloon-dark");
+    balloonTwo.classList.add("balloon-dark");
+    homeSection.classList.add("home-deactive");
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 2;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navSkills.style.color = "#ffff00";
+      skillSection.classList.add("skills-active");
+      homeSection.classList.remove("home-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navAbout.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "About";
+      nextButtonText.textContent = "Projects";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 1) {
+    aboutSection.classList.add("about-deactive");
+    navAbout.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 2;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navSkills.style.color = "#ffff00";
+      skillSection.classList.add("skills-active");
+      aboutSection.classList.remove("about-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navAbout.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "About";
+      nextButtonText.textContent = "Projects";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 3) {
+    worksSection.classList.add("works-deactive");
+    navWorks.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 2;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navSkills.style.color = "#ffff00";
+      skillSection.classList.add("skills-active");
+      worksSection.classList.remove("works-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navAbout.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "About";
+      nextButtonText.textContent = "Projects";
+    }, 3000);
+  } else if (keyCounterForSmallScreen === 4) {
+    contactSection.classList.add("contact-deactive");
+    navContact.style.color = "#fff";
+    prevPageButton.style.display = "none";
+    nextPageButton.style.display = "none";
+    keyCounterForSmallScreen = 2;
+    setTimeout(() => {
+      prevPageButton.style.color = "#fff";
+      nextPageButton.style.color = "#fff";
+      navbarItems.style.color = "#fff";
+      navSkills.style.color = "#ffff00";
+      skillSection.classList.add("skills-active");
+      contactSection.classList.remove("contact-active");
+      prevPageButton.classList.remove("left-arrow");
+      prevPageButton.classList.add("left-arrow-active");
+      navAbout.style.color = "#fff";
+      navWorks.style.color = "#fff";
+      navContact.style.color = "#fff";
+      nextPageButton.style.display = "block";
+      prevPageButton.style.display = "block";
+      prevButtonText.textContent = "About";
+      nextButtonText.textContent = "Projects";
     }, 3000);
   }
 });
