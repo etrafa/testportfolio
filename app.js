@@ -528,39 +528,89 @@ nextPageButton.addEventListener("click", () => {
   if (keyCounter === 1) {
     console.log("This is homepage");
     navbarItemDeactive(navContact);
-    navbarToBlack();
     removeNavStyleAttribute(navContact);
-    arrowColorToBlack(prevPageButton, nextPageButton);
     hideLeftArrow();
+    hideArrows(prevPageButton, nextPageButton);
     arrowTexts("", "About");
+    sectionActive(contactSection, "contact-deactive");
+    setTimeout(() => {
+      removeSectionDeactive(mainContainer, "main-active");
+      removeSectionDeactive(balloonOne, "balloon-dark");
+      removeSectionDeactive(balloonTwo, "balloon-dark");
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(homeSection, "home-deactive");
+      navbarToBlack();
+      showArrows(prevPageButton, nextPageButton);
+      arrowColorToBlack(prevPageButton, nextPageButton);
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(contactSection, "contact-deactive");
+    }, 3000);
   } else if (keyCounter === 2) {
     console.log("this is about page");
-    navbarItemActive(navAbout);
     navbarToWhite();
     arrowColorToWhite(prevPageButton, nextPageButton);
-    showLeftArrow();
+    hideArrows(prevPageButton, nextPageButton);
     arrowTexts("Home", "Skills");
+    sectionActive(mainContainer, "main-active");
+    sectionActive(balloonOne, "balloon-dark");
+    sectionActive(balloonTwo, "balloon-dark");
+    sectionActive(homeSection, "home-deactive");
+    setTimeout(() => {
+      navbarItemActive(navAbout);
+      showLeftArrow();
+      showArrows(prevPageButton, nextPageButton);
+      sectionActive(aboutSection, "about-active");
+    }, 3000);
   } else if (keyCounter === 3) {
     console.log("this is skills page");
     navbarItemDeactive(navAbout);
-    navbarItemActive(navSkills);
+    hideArrows(prevPageButton, nextPageButton);
     removeNavStyleAttribute(navAbout);
     arrowColorToWhite(prevPageButton, nextPageButton);
     arrowTexts("About", "Projects");
+    sectionActive(aboutSection, "about-deactive");
+    setTimeout(() => {
+      navbarItemActive(navSkills);
+      showLeftArrow();
+      showArrows(prevPageButton, nextPageButton);
+      sectionActive(skillSection, "skills-active");
+      removeSectionDeactive(aboutSection, "about-active");
+      removeSectionDeactive(aboutSection, "about-deactive");
+    }, 3000);
   } else if (keyCounter === 4) {
     console.log("this is projects page");
     navbarItemDeactive(navSkills);
-    navbarItemActive(navWorks);
+    hideArrows(prevPageButton, nextPageButton);
     removeNavStyleAttribute(navSkills);
     arrowColorToWhite(prevPageButton, nextPageButton);
     arrowTexts("Skills", "Contact");
+    sectionActive(skillSection, "skills-deactive");
+    setTimeout(() => {
+      navbarItemActive(navWorks);
+      showLeftArrow();
+      showArrows(prevPageButton, nextPageButton);
+      removeSectionDeactive(skillSection, "skills-active");
+      sectionActive(worksSection, "works-active");
+      removeSectionDeactive(skillSection, "skills-active");
+      removeSectionDeactive(skillSection, "skills-deactive");
+    }, 3000);
   } else if (keyCounter === 5) {
     console.log("this is contact page");
     navbarItemDeactive(navWorks);
-    navbarItemActive(navContact);
+    hideArrows(prevPageButton, nextPageButton);
     removeNavStyleAttribute(navWorks);
     arrowColorToWhite(prevPageButton, nextPageButton);
     arrowTexts("Projects", "Home");
+    sectionActive(worksSection, "works-deactive");
+    setTimeout(() => {
+      navbarItemActive(navContact);
+      showLeftArrow();
+      showArrows(prevPageButton, nextPageButton);
+      removeSectionDeactive(worksSection, "works-active");
+      sectionActive(contactSection, "contact-active");
+      removeSectionDeactive(worksSection, "works-active");
+      removeSectionDeactive(worksSection, "works-deactive");
+    }, 3000);
   }
 });
 
@@ -651,6 +701,27 @@ const hideLeftArrow = () => {
 
 const showLeftArrow = () => {
   prevPageButton.classList.add("left-arrow-active");
+};
+
+const hideArrows = (leftArrow, rightArrow) => {
+  leftArrow.style.display = "none";
+  rightArrow.style.display = "none";
+};
+
+const showArrows = (leftArrow, rightArrow) => {
+  leftArrow.style.display = "block";
+  rightArrow.style.display = "block";
+};
+
+//ADD ACTIVE-DEACTIVE CLASS
+const sectionActive = (section, active) => {
+  section.classList.add(active);
+};
+const sectionDeactive = (section, deactive) => {
+  section.classList.add(deactive);
+};
+const removeSectionDeactive = (section, className) => {
+  section.classList.remove(className);
 };
 
 navHome.addEventListener("click", () => {
