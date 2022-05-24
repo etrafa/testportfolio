@@ -771,6 +771,9 @@ navAbout.addEventListener("click", () => {
     aboutSection,
     "about-active"
   );
+  navClickedThree(2, navAbout, "Home", "Skills", aboutSection, "about-active");
+  navClickedFour(2, navAbout, "Home", "Skills", aboutSection, "about-active");
+  navClickedFive(2, navAbout, "Home", "Skills", aboutSection, "about-active");
 });
 navSkills.addEventListener("click", () => {
   console.log(`This is skills and page ${keyCounter}`);
@@ -782,26 +785,30 @@ navSkills.addEventListener("click", () => {
     skillSection,
     "skills-active"
   );
-  navClickedPageTwo(
+  navClickedTwo(
     3,
     navSkills,
     "About",
-    "Project",
+    "Projects",
     skillSection,
     "skills-active"
   );
-
-  // navbarItemActive(navSkills);
-  // navbarItemDeactive(navAbout);
-  // navbarItemDeactive(navWorks);
-  // navbarItemDeactive(navContact);
-  // removeNavStyleAttribute(navAbout);
-  // removeNavStyleAttribute(navWorks);
-  // removeNavStyleAttribute(navContact);
-  // navbarToWhite();
-  // arrowColorToWhite(prevPageButton, nextPageButton);
-  // showLeftArrow();
-  // arrowTexts("About", "Projects");
+  navClickedFour(
+    3,
+    navSkills,
+    "About",
+    "Projects",
+    skillSection,
+    "skills-active"
+  );
+  navClickedFive(
+    3,
+    navSkills,
+    "About",
+    "Projects",
+    skillSection,
+    "skills-active"
+  );
 });
 navWorks.addEventListener("click", () => {
   console.log(`This is works and page ${keyCounter}`);
@@ -813,17 +820,23 @@ navWorks.addEventListener("click", () => {
     worksSection,
     "works-active"
   );
-  // navbarItemActive(navWorks);
-  // navbarItemDeactive(navAbout);
-  // navbarItemDeactive(navSkills);
-  // navbarItemDeactive(navContact);
-  // removeNavStyleAttribute(navAbout);
-  // removeNavStyleAttribute(navSkills);
-  // removeNavStyleAttribute(navContact);
-  // navbarToWhite();
-  // arrowColorToWhite(prevPageButton, nextPageButton);
-  // showLeftArrow();
-  // arrowTexts("Skills", "Contact");
+  navClickedTwo(4, navWorks, "Skills", "Contact", worksSection, "works-active");
+  navClickedThree(
+    4,
+    navWorks,
+    "Skills",
+    "Contact",
+    worksSection,
+    "works-active"
+  );
+  navClickedFive(
+    4,
+    navWorks,
+    "Skills",
+    "Contact",
+    worksSection,
+    "works-active"
+  );
 });
 navContact.addEventListener("click", () => {
   navClickedPageOne(
@@ -834,18 +847,30 @@ navContact.addEventListener("click", () => {
     contactSection,
     "contact-active"
   );
-  // console.log(`This is contact and page ${keyCounter}`);
-  // navbarItemActive(navContact);
-  // navbarItemDeactive(navAbout);
-  // navbarItemDeactive(navSkills);
-  // navbarItemDeactive(navWorks);
-  // removeNavStyleAttribute(navAbout);
-  // removeNavStyleAttribute(navWorks);
-  // removeNavStyleAttribute(navSkills);
-  // navbarToWhite();
-  // arrowColorToWhite(prevPageButton, nextPageButton);
-  // showLeftArrow();
-  // arrowTexts("Projects", "Home");
+  navClickedTwo(
+    5,
+    navContact,
+    "Projects",
+    "Home",
+    contactSection,
+    "contact-active"
+  );
+  navClickedThree(
+    5,
+    navContact,
+    "Projects",
+    "Home",
+    contactSection,
+    "contact-active"
+  );
+  navClickedFour(
+    5,
+    navContact,
+    "Projects",
+    "Home",
+    contactSection,
+    "contact-active"
+  );
 });
 
 const navClickedPageOne = (
@@ -876,21 +901,18 @@ const navClickedPageOne = (
   }
 };
 
-const navClickedPageTwo = (
-  activePageNumber,
-  sectionDisable,
-  sectionDisableClassName,
+const navClickedTwo = (
   pageNumber,
   navActive,
   prevText,
   nextText,
   section,
-  activeOne,
-  deactiveOne
+  activeOne
 ) => {
-  if (keyCounter === activePageNumber) {
-    sectionActive(sectionDisable, sectionDisableClassName);
-    nextPageButton.style.display = "none";
+  if (keyCounter === 2) {
+    sectionActive(aboutSection, "about-deactive");
+    navbarItemDeactive(navAbout);
+    removeNavStyleAttribute(navAbout);
     setTimeout(() => {
       keyCounter = pageNumber;
       navbarToWhite();
@@ -901,8 +923,92 @@ const navClickedPageTwo = (
       arrowColorToWhite(prevPageButton, nextPageButton);
       arrowTexts(prevText, nextText);
       sectionActive(section, activeOne);
-      sectionDeactive(deactiveOne);
-      removeNavStyleAttribute(deactiveOne);
+      removeSectionDeactive(aboutSection, "about-active");
+      removeSectionDeactive(aboutSection, "about-deactive");
+    }, 3000);
+  }
+};
+
+const navClickedThree = (
+  pageNumber,
+  navActive,
+  prevText,
+  nextText,
+  section,
+  activeOne
+) => {
+  if (keyCounter === 3) {
+    sectionActive(skillSection, "skills-deactive");
+    navbarItemDeactive(navSkills);
+    removeNavStyleAttribute(navSkills);
+    setTimeout(() => {
+      keyCounter = pageNumber;
+      navbarToWhite();
+      showLeftArrow();
+      navbarItemActive(navActive);
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
+      arrowColorToWhite(prevPageButton, nextPageButton);
+      arrowTexts(prevText, nextText);
+      sectionActive(section, activeOne);
+      removeSectionDeactive(skillSection, "skills-active");
+      removeSectionDeactive(skillSection, "skills-deactive");
+    }, 3000);
+  }
+};
+
+const navClickedFour = (
+  pageNumber,
+  navActive,
+  prevText,
+  nextText,
+  section,
+  activeOne
+) => {
+  if (keyCounter === 4) {
+    sectionActive(worksSection, "works-deactive");
+    navbarItemDeactive(navWorks);
+    removeNavStyleAttribute(navWorks);
+    setTimeout(() => {
+      keyCounter = pageNumber;
+      navbarToWhite();
+      showLeftArrow();
+      navbarItemActive(navActive);
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
+      arrowColorToWhite(prevPageButton, nextPageButton);
+      arrowTexts(prevText, nextText);
+      sectionActive(section, activeOne);
+      removeSectionDeactive(worksSection, "works-active");
+      removeSectionDeactive(worksSection, "works-deactive");
+    }, 3000);
+  }
+};
+
+const navClickedFive = (
+  pageNumber,
+  navActive,
+  prevText,
+  nextText,
+  section,
+  activeOne
+) => {
+  if (keyCounter === 5) {
+    sectionActive(contactSection, "contact-deactive");
+    navbarItemDeactive(navContact);
+    removeNavStyleAttribute(navContact);
+    setTimeout(() => {
+      keyCounter = pageNumber;
+      navbarToWhite();
+      showLeftArrow();
+      navbarItemActive(navActive);
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
+      arrowColorToWhite(prevPageButton, nextPageButton);
+      arrowTexts(prevText, nextText);
+      sectionActive(section, activeOne);
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(contactSection, "contact-deactive");
     }, 3000);
   }
 };
