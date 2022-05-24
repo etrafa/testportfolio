@@ -215,7 +215,13 @@
 //   }
 
 //   if (keyCounterForSmallScreen === 1) {
-//     aboutSection.classList.add("about-deactive");
+//
+//   } else if (keyCounterForSmallScreen === 2) {
+//     skillSection.classList.add("skills-deactive");
+//     prevPageButton.style.display = "none";
+//     keyCounterForSmallScreen -= 1;
+//     setTimeout(() => {
+//       skillSection.classList.remove("s aboutSection.classList.add("about-deactive");
 //     prevPageButton.style.display = "none";
 //     keyCounterForSmallScreen -= 1;
 //     setTimeout(() => {
@@ -236,13 +242,7 @@
 //       prevButtonText.style.color = "#fff";
 //       nextButtonText.style.color = "#fff";
 //       nextButtonText.textContent = "About";
-//     }, 3000);
-//   } else if (keyCounterForSmallScreen === 2) {
-//     skillSection.classList.add("skills-deactive");
-//     prevPageButton.style.display = "none";
-//     keyCounterForSmallScreen -= 1;
-//     setTimeout(() => {
-//       skillSection.classList.remove("skills-deactive");
+//     }, 3000);kills-deactive");
 //       skillSection.classList.remove("skills-active");
 //       aboutSection.classList.add("about-active");
 //       aboutSection.classList.remove("about-deactive");
@@ -622,11 +622,21 @@ prevPageButton.addEventListener("click", () => {
   if (keyCounter === 1) {
     console.log("This is homepage");
     navbarItemDeactive(navAbout);
-    navbarToBlack();
     removeNavStyleAttribute(navAbout);
-    arrowColorToBlack(prevPageButton, nextPageButton);
     hideLeftArrow();
     arrowTexts("", "About");
+    sectionActive(aboutSection, "about-deactive");
+    setTimeout(() => {
+      arrowColorToBlack(prevPageButton, nextPageButton);
+      navbarToBlack();
+      removeSectionDeactive(aboutSection, "about-active");
+      removeSectionDeactive(aboutSection, "about-deactive");
+      removeSectionDeactive(mainContainer, "main-active");
+      removeSectionDeactive(balloonOne, "balloon-dark");
+      removeSectionDeactive(balloonTwo, "balloon-dark");
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(homeSection, "home-deactive");
+    }, 3000);
   } else if (keyCounter === 2) {
     console.log("this is about page");
     navbarItemActive(navAbout);
