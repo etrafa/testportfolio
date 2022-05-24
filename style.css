@@ -209,10 +209,6 @@ nav {
 
 /* HOME SECTION STARTS HERE */
 
-.home {
-  display: none;
-}
-
 .home-active {
   display: block;
   padding-bottom: 8rem;
@@ -636,6 +632,15 @@ header {
     color: #fff;
   }
 
+  .left-arrow-hoverEffect,
+  .right-arrow-hoverEffect {
+    color: #fff;
+  }
+  .left-arrow-hoverEffect:hover,
+  .right-arrow-hoverEffect:hover {
+    color: var(--main-pink-color);
+  }
+
   .prev-text {
     position: absolute;
     left: 50px;
@@ -696,6 +701,13 @@ header {
     font-size: 20px;
     letter-spacing: 6px;
     margin: 2rem 0;
+  }
+
+  .navbar-items-to-white li {
+    color: #fff;
+  }
+  .navbar-items-to-white li:hover {
+    color: var(--main-pink-color);
   }
 
   .close-button {
