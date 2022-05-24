@@ -758,8 +758,27 @@ const removeSectionDeactive = (section, className) => {
 };
 
 navHome.addEventListener("click", () => {
-  keyCounter = 1;
-  console.log(`This is homepage and page ${keyCounter}`);
+  if (keyCounter === 2) {
+    sectionActive(aboutSection, "about-deactive");
+    navbarItemDeactive(navAbout);
+    removeNavStyleAttribute(navAbout);
+    setTimeout(() => {
+      keyCounter = 1;
+      removeSectionDeactive(aboutSection, "about-active");
+      removeSectionDeactive(aboutSection, "about-deactive");
+      arrowColorToBlack(prevPageButton, nextPageButton);
+      navbarToBlack();
+      hideLeftArrow();
+      nextButtonText.textContent = "About";
+      removeSectionDeactive(aboutSection, "about-active");
+      removeSectionDeactive(aboutSection, "about-deactive");
+      removeSectionDeactive(mainContainer, "main-active");
+      removeSectionDeactive(balloonOne, "balloon-dark");
+      removeSectionDeactive(balloonTwo, "balloon-dark");
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(homeSection, "home-deactive");
+    }, 3000);
+  }
 });
 navAbout.addEventListener("click", () => {
   console.log(`This is about and page ${keyCounter}`);
@@ -1011,4 +1030,28 @@ const navClickedFive = (
       removeSectionDeactive(contactSection, "contact-deactive");
     }, 3000);
   }
+};
+
+const returnHome = (
+  activeSection,
+  disableActiveClass,
+  removeActiveClass,
+  removeDeactiveClass
+) => {
+  sectionActive(contactSection, "contact-deactive");
+  navbarItemDeactive(navContact);
+  removeNavStyleAttribute(navContact);
+  setTimeout(() => {
+    keyCounter = pageNumber;
+    navbarToWhite();
+    showLeftArrow();
+    navbarItemActive(navActive);
+    prevPageButton.style.display = "block";
+    nextPageButton.style.display = "block";
+    arrowColorToWhite(prevPageButton, nextPageButton);
+    arrowTexts(prevText, nextText);
+    sectionActive(section, activeOne);
+    removeSectionDeactive(contactSection, "contact-active");
+    removeSectionDeactive(contactSection, "contact-deactive");
+  }, 3000);
 };
