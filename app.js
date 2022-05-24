@@ -517,8 +517,6 @@ hamburgerMenu.addEventListener("click", () => {
 
 let keyCounter = 1;
 
-console.log(keyCounter);
-
 nextPageButton.addEventListener("click", () => {
   keyCounter = keyCounter + 1;
   if (keyCounter > 5) {
@@ -620,7 +618,7 @@ prevPageButton.addEventListener("click", () => {
     keyCounter = 1;
   }
   if (keyCounter === 1) {
-    console.log("This is homepage");
+    console.log("This is homepage" + keyCounter);
     navbarItemDeactive(navAbout);
     removeNavStyleAttribute(navAbout);
     hideLeftArrow();
@@ -639,22 +637,38 @@ prevPageButton.addEventListener("click", () => {
     }, 3000);
   } else if (keyCounter === 2) {
     console.log("this is about page");
-    navbarItemActive(navAbout);
     navbarItemDeactive(navSkills);
     removeNavStyleAttribute(navSkills);
     navbarToWhite();
     arrowColorToWhite(prevPageButton, nextPageButton);
     showLeftArrow();
     arrowTexts("Home", "Skills");
+    sectionActive(skillSection, "skills-deactive");
+    hideArrows(prevPageButton, nextPageButton);
+    setTimeout(() => {
+      navbarItemActive(navAbout);
+      removeSectionDeactive(skillSection, "skills-active");
+      removeSectionDeactive(skillSection, "skills-deactive");
+      sectionActive(aboutSection, "about-active");
+      showArrows(prevPageButton, nextPageButton);
+    }, 3000);
   } else if (keyCounter === 3) {
     console.log("this is skills page");
-    navbarItemActive(navSkills);
     navbarItemDeactive(navWorks);
     removeNavStyleAttribute(navWorks);
     navbarToWhite();
     arrowColorToWhite(prevPageButton, nextPageButton);
     showLeftArrow();
-    arrowTexts("Home", "Skills");
+    arrowTexts("About", "Projects");
+    sectionActive(worksSection, "works-deactive");
+    hideArrows(prevPageButton, nextPageButton);
+    setTimeout(() => {
+      navbarItemActive(navSkills);
+      removeSectionDeactive(worksSection, "works-active");
+      removeSectionDeactive(worksSection, "works-deactive");
+      sectionActive(skillSection, "skills-active");
+      showArrows(prevPageButton, nextPageButton);
+    }, 3000);
   } else if (keyCounter === 4) {
     console.log("this is project page");
     navbarItemActive(navWorks);
@@ -663,7 +677,16 @@ prevPageButton.addEventListener("click", () => {
     navbarToWhite();
     arrowColorToWhite(prevPageButton, nextPageButton);
     showLeftArrow();
-    arrowTexts("Home", "Skills");
+    arrowTexts("Projects", "Home");
+    sectionActive(contactSection, "contact-deactive");
+    hideArrows(prevPageButton, nextPageButton);
+    setTimeout(() => {
+      navbarItemActive(navWorks);
+      removeSectionDeactive(contactSection, "contact-active");
+      removeSectionDeactive(contactSection, "contact-deactive");
+      sectionActive(worksSection, "works-active");
+      showArrows(prevPageButton, nextPageButton);
+    }, 3000);
   }
 });
 
@@ -739,62 +762,147 @@ navHome.addEventListener("click", () => {
   console.log(`This is homepage and page ${keyCounter}`);
 });
 navAbout.addEventListener("click", () => {
-  keyCounter = 2;
   console.log(`This is about and page ${keyCounter}`);
-  navbarItemActive(navAbout);
-  navbarItemDeactive(navSkills);
-  navbarItemDeactive(navWorks);
-  navbarItemDeactive(navContact);
-  removeNavStyleAttribute(navSkills);
-  removeNavStyleAttribute(navWorks);
-  removeNavStyleAttribute(navContact);
-  navbarToWhite();
-  arrowColorToWhite(prevPageButton, nextPageButton);
-  showLeftArrow();
-  arrowTexts("Home", "Skills");
+  navClickedPageOne(
+    2,
+    navAbout,
+    "Home",
+    "Skills",
+    aboutSection,
+    "about-active"
+  );
 });
 navSkills.addEventListener("click", () => {
-  keyCounter = 3;
   console.log(`This is skills and page ${keyCounter}`);
-  navbarItemActive(navSkills);
-  navbarItemDeactive(navAbout);
-  navbarItemDeactive(navWorks);
-  navbarItemDeactive(navContact);
-  removeNavStyleAttribute(navAbout);
-  removeNavStyleAttribute(navWorks);
-  removeNavStyleAttribute(navContact);
-  navbarToWhite();
-  arrowColorToWhite(prevPageButton, nextPageButton);
-  showLeftArrow();
-  arrowTexts("About", "Projects");
+  navClickedPageOne(
+    3,
+    navSkills,
+    "About",
+    "Projects",
+    skillSection,
+    "skills-active"
+  );
+  navClickedPageTwo(
+    3,
+    navSkills,
+    "About",
+    "Project",
+    skillSection,
+    "skills-active"
+  );
+
+  // navbarItemActive(navSkills);
+  // navbarItemDeactive(navAbout);
+  // navbarItemDeactive(navWorks);
+  // navbarItemDeactive(navContact);
+  // removeNavStyleAttribute(navAbout);
+  // removeNavStyleAttribute(navWorks);
+  // removeNavStyleAttribute(navContact);
+  // navbarToWhite();
+  // arrowColorToWhite(prevPageButton, nextPageButton);
+  // showLeftArrow();
+  // arrowTexts("About", "Projects");
 });
 navWorks.addEventListener("click", () => {
-  keyCounter = 4;
   console.log(`This is works and page ${keyCounter}`);
-  navbarItemActive(navWorks);
-  navbarItemDeactive(navAbout);
-  navbarItemDeactive(navSkills);
-  navbarItemDeactive(navContact);
-  removeNavStyleAttribute(navAbout);
-  removeNavStyleAttribute(navSkills);
-  removeNavStyleAttribute(navContact);
-  navbarToWhite();
-  arrowColorToWhite(prevPageButton, nextPageButton);
-  showLeftArrow();
-  arrowTexts("Skills", "Contact");
+  navClickedPageOne(
+    4,
+    navWorks,
+    "Skills",
+    "Contact",
+    worksSection,
+    "works-active"
+  );
+  // navbarItemActive(navWorks);
+  // navbarItemDeactive(navAbout);
+  // navbarItemDeactive(navSkills);
+  // navbarItemDeactive(navContact);
+  // removeNavStyleAttribute(navAbout);
+  // removeNavStyleAttribute(navSkills);
+  // removeNavStyleAttribute(navContact);
+  // navbarToWhite();
+  // arrowColorToWhite(prevPageButton, nextPageButton);
+  // showLeftArrow();
+  // arrowTexts("Skills", "Contact");
 });
 navContact.addEventListener("click", () => {
-  keyCounter = 5;
-  console.log(`This is contact and page ${keyCounter}`);
-  navbarItemActive(navContact);
-  navbarItemDeactive(navAbout);
-  navbarItemDeactive(navSkills);
-  navbarItemDeactive(navWorks);
-  removeNavStyleAttribute(navAbout);
-  removeNavStyleAttribute(navWorks);
-  removeNavStyleAttribute(navSkills);
-  navbarToWhite();
-  arrowColorToWhite(prevPageButton, nextPageButton);
-  showLeftArrow();
-  arrowTexts("Projects", "Home");
+  navClickedPageOne(
+    5,
+    navContact,
+    "Projects",
+    "Home",
+    contactSection,
+    "contact-active"
+  );
+  // console.log(`This is contact and page ${keyCounter}`);
+  // navbarItemActive(navContact);
+  // navbarItemDeactive(navAbout);
+  // navbarItemDeactive(navSkills);
+  // navbarItemDeactive(navWorks);
+  // removeNavStyleAttribute(navAbout);
+  // removeNavStyleAttribute(navWorks);
+  // removeNavStyleAttribute(navSkills);
+  // navbarToWhite();
+  // arrowColorToWhite(prevPageButton, nextPageButton);
+  // showLeftArrow();
+  // arrowTexts("Projects", "Home");
 });
+
+const navClickedPageOne = (
+  pageNumber,
+  navActive,
+  prevText,
+  nextText,
+  section,
+  activeOne
+) => {
+  if (keyCounter === 1) {
+    sectionActive(mainContainer, "main-active");
+    sectionActive(balloonOne, "balloon-dark");
+    sectionActive(balloonTwo, "balloon-dark");
+    sectionActive(homeSection, "home-deactive");
+    nextPageButton.style.display = "none";
+    setTimeout(() => {
+      keyCounter = pageNumber;
+      navbarToWhite();
+      showLeftArrow();
+      navbarItemActive(navActive);
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
+      arrowColorToWhite(prevPageButton, nextPageButton);
+      arrowTexts(prevText, nextText);
+      sectionActive(section, activeOne);
+    }, 3000);
+  }
+};
+
+const navClickedPageTwo = (
+  activePageNumber,
+  sectionDisable,
+  sectionDisableClassName,
+  pageNumber,
+  navActive,
+  prevText,
+  nextText,
+  section,
+  activeOne,
+  deactiveOne
+) => {
+  if (keyCounter === activePageNumber) {
+    sectionActive(sectionDisable, sectionDisableClassName);
+    nextPageButton.style.display = "none";
+    setTimeout(() => {
+      keyCounter = pageNumber;
+      navbarToWhite();
+      showLeftArrow();
+      navbarItemActive(navActive);
+      prevPageButton.style.display = "block";
+      nextPageButton.style.display = "block";
+      arrowColorToWhite(prevPageButton, nextPageButton);
+      arrowTexts(prevText, nextText);
+      sectionActive(section, activeOne);
+      sectionDeactive(deactiveOne);
+      removeNavStyleAttribute(deactiveOne);
+    }, 3000);
+  }
+};
